@@ -1,10 +1,10 @@
 #RobotShop
 ---
-By:_Quinn_Henckel
+*By: Infinite Monkeys Studio*
 
 ###Game Play:
 ---
-You are the owner of a shop that designs, manufactures and sells robots.  You start with nothing, but your hands and a shop. Then through randomly generated contracts you earn money and supplies. To fill the contracts you must design and construct robots. Contracts will slowly get more demanding with higher quantities and tighter deadlines. You will need to hire some employees. Humans are imperfect and inefficient. When you become wealthy enough you will need to build robots to help you in the shop. Once you construct a robot with AI you will have to write your own AI.
+You are the owner of a shop that designs, manufactures and sells robots.  You start with nothing, but your hands and a shop. Then through randomly generated contracts you earn money and supplys. To fill the contracts you must design and construct robots. Contracts will slowly get more demanding with higher quantities and tighter deadlines. You will need to hire some employees. Humans are imperfect and inefficient. When you become wealthy enough you will be able to build robots to help you in the shop. Once you construct a robot with AI you will have to write your own AI.
 
 ###Nuts & Bolts
 ---

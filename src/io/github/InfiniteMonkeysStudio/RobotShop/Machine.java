@@ -1,5 +1,9 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
-
+/**
+ * This is a mechanism that does stuff.
+ * @author Quinn
+ *
+ */
 public class Machine extends StaticEntity{
 
 	private String type; //TODO Make MachineEnum
@@ -12,7 +16,6 @@ public class Machine extends StaticEntity{
 	public Machine(Location location , String type) {
 		super(location);
 		this.type = type;
-		// TODO Auto-generated constructor stub
 	}
 
 }

@@ -1,5 +1,9 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
+/**
+ * Represents an inventory.
+ * Basically just an array of supply stacks
+ */
 public class Inventory {
 	private SupplyStack[] contents;
 	

@@ -1,5 +1,9 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
-
+/**
+ * Not sure what this is. maybe unneeded.
+ * @author Quinn
+ *
+ */
 public class StaticEntity extends Entity{
 	
 	/**

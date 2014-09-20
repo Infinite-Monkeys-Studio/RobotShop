@@ -1,5 +1,9 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
-
+/**
+ * This something that exists and can change in the world.
+ * @author Quinn
+ *
+ */
 public class Entity {
 	
 	private Location location;

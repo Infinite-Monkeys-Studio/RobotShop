@@ -1,5 +1,9 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
-
+/**
+ * This is a section of the shop.
+ * @author Quinn
+ *
+ */
 public class Building {
 	
 	private String name;

@@ -1,5 +1,9 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
-
+/**
+ * Represents anything that moves it's self.
+ * @author Quinn
+ *
+ */
 public class MovingEntity extends Entity{
 	
 	/**

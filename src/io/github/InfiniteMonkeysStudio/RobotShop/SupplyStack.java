@@ -1,5 +1,9 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
-
+/**
+ * A stack of supplys.
+ * @author Quinn
+ *
+ */
 public class SupplyStack extends StaticEntity{
 	
 	private Supply type;

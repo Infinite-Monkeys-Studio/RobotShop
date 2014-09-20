@@ -1,5 +1,11 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
+/**
+ * A single supply.
+ * TODO make an enum
+ * @author Quinn
+ *
+ */
 public class Supply {
 	
 	private String type; //TODO make enum

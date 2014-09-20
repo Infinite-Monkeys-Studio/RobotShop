@@ -1,6 +1,7 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
 import processing.core.PApplet;
+
 /**
  * The main view window. Also represents the players view in the world.
  * @author Quinn

@@ -1,5 +1,9 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
-
+/**
+ * Represents a static immovable hard thing.
+ * @author Quinn
+ *
+ */
 public class Wall extends StaticEntity{
 
 	private String type; //TODO make Wall enum

@@ -1,5 +1,10 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
-
+/**
+ * Represents a worker.
+ * Could be a robot or human.
+ * @author Quinn
+ *
+ */
 public class Worker extends MovingEntity{
 	
 	private Inventory inventory;

@@ -1,11 +1,15 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
+
+import java.io.Serializable;
+
 /**
  * This something that exists and can change in the world.
  * @author Quinn
  *
  */
-public class Entity {
+public abstract class Entity implements Drawable, Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	private Location location;
 	/**
 	 * Class constructor specifying the location where the entity exists.

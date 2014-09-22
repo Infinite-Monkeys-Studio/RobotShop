@@ -4,7 +4,7 @@ package io.github.InfiniteMonkeysStudio.RobotShop;
  * @author Quinn
  *
  */
-public class MovingEntity extends Entity{
+public abstract class MovingEntity extends Entity{
 	
 	/**
 	 * Class constructor this is the location of the entity.

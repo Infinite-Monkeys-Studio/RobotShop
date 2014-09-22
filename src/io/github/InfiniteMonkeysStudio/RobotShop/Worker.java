@@ -1,4 +1,7 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
+
+import processing.core.PApplet;
+
 /**
  * Represents a worker.
  * Could be a robot or human.
@@ -22,6 +25,12 @@ public class Worker extends MovingEntity{
 	public Worker(Location location) {
 		super(location);
 		this.inventory = new Inventory();
+	}
+
+	@Override
+	public void draw(PApplet canvas) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

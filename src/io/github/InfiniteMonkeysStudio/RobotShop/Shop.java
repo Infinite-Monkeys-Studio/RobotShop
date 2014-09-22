@@ -1,4 +1,7 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
+
+import java.util.ArrayList;
+
 /**
  * This is the almost the whole world to you.
  * @author Quinn
@@ -6,7 +9,11 @@ package io.github.InfiniteMonkeysStudio.RobotShop;
  */
 public class Shop {
 	
-	Shop(){
+	ArrayList<Building> buildingList;
+	
+	Shop() {
 		//TODO make this.
 	}
+	
+	
 }

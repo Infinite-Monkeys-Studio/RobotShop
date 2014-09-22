@@ -1,0 +1,3 @@
+draw claas world world loops through things in the world.
+drawable interface. (learn about interfaces)
+pass in "canvis" 

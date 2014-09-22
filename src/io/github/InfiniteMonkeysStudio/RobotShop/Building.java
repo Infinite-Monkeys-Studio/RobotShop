@@ -1,10 +1,15 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
+
+import java.util.ArrayList;
+
 /**
  * This is a section of the shop.
  * @author Quinn
  *
  */
 public class Building {
+	
+	ArrayList<Entity> entityList;
 	
 	private String name;
 	private String type;//TODO write an enum

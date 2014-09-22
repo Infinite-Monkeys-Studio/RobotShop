@@ -4,7 +4,7 @@ package io.github.InfiniteMonkeysStudio.RobotShop;
  * @author Quinn
  *
  */
-public class StaticEntity extends Entity{
+public abstract class StaticEntity extends Entity{
 	
 	/**
 	 * Class constructor specifying the location of the entity

@@ -9,6 +9,7 @@ import processing.core.PApplet;
  */
 public class Viewport extends PApplet {
 
+	private static final long serialVersionUID = 1L;
 	private Location location; //viewport location
 	
 	Shop shop;

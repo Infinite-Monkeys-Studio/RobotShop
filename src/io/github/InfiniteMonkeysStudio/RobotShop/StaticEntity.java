@@ -6,6 +6,8 @@ package io.github.InfiniteMonkeysStudio.RobotShop;
  */
 public abstract class StaticEntity extends Entity{
 	
+	private static final long serialVersionUID = 1L;
+	
 	/**
 	 * Class constructor specifying the location of the entity
 	 * @param location

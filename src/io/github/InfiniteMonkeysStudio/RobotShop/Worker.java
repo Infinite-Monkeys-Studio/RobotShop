@@ -10,6 +10,7 @@ import processing.core.PApplet;
  */
 public class Worker extends MovingEntity{
 	
+	private static final long serialVersionUID = 1L;
 	private Inventory inventory;
 	
 	/**

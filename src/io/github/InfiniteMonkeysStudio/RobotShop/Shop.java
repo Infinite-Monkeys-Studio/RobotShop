@@ -15,6 +15,7 @@ public class Shop implements Drawable{
 	
 	Shop() {
 		//FIXME make this.
+		buildingList = new ArrayList<Building>();
 	}
 	
 	/**

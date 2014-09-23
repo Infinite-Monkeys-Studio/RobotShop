@@ -11,8 +11,7 @@ import processing.core.PApplet;
  */
 public class Building implements Drawable{
 	
-	ArrayList<Entity> entityList;
-	
+	private ArrayList<Entity> entityList;
 	private String name;
 	private String type;//TODO write an enum
 	/**
@@ -22,6 +21,7 @@ public class Building implements Drawable{
 	public Building(String name) {
 		this.name = name;
 		this.type = "Default";
+		entityList = new ArrayList<Entity>();
 	}
 	
 	/**
@@ -32,6 +32,7 @@ public class Building implements Drawable{
 	public Building(String name, String type) {
 		this.name = name;
 		this.type = type;
+		entityList = new ArrayList<Entity>();
 	}
 	
 	/**
@@ -42,6 +43,7 @@ public class Building implements Drawable{
 	public Building() {
 		this.name = null;
 		this.type = "Default";
+		entityList = new ArrayList<Entity>();
 	}
 	
 	/**

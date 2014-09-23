@@ -12,6 +12,13 @@ We are working in Java with the render and control libraries from processing. We
 [Class layout](https://realtimeboard.com/app/60158466/Robot-Shop)  
 We like to encourage modding. To that end we have provided [Javadocs](http://InfiniteMonkeysStudio.bitbucket.org)
 
+###Instructions for compiling:
+---
+1. Clone the repo
+2. Open the repo in eclipse
+3. Run the project as an applet
+
+
 ###Plan for release:
 ---
 Our plan is to release a free alpha as soon as we can.

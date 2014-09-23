@@ -16,7 +16,7 @@ public class Building implements Drawable{
 	private String type;//TODO write an enum
 	/**
 	 * Class constructor Type will be "default."
-	 * @param name
+	 * @param name of the building
 	 */
 	public Building(String name) {
 		this.name = name;
@@ -26,8 +26,8 @@ public class Building implements Drawable{
 	
 	/**
 	 * Class constructor Setting the name and type of the building.
-	 * @param name
-	 * @param type
+	 * @param name of the building
+	 * @param type of the building
 	 */
 	public Building(String name, String type) {
 		this.name = name;
@@ -49,7 +49,7 @@ public class Building implements Drawable{
 	/**
 	 * Add an entity to this building.
 	 * The entity will be placed at it's location
-	 * @param entity
+	 * @param entity the entity to add
 	 * @return true if this building changed as a result of the call
 	 */
 	public boolean addEntity(Entity entity) {

@@ -16,8 +16,8 @@ public class Worker extends MovingEntity{
 	
 	/**
 	 * Class construtor.
-	 * @param location Location of the worker
-	 * @param inventory
+	 * @param location of the worker
+	 * @param inventory to give the worker
 	 */
 	public Worker(Location location, Inventory inventory) {
 		super(location);

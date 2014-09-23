@@ -8,8 +8,8 @@ public class Inventory {
 	private SupplyStack[] contents;
 	
 	/**
-	 * Class constructor specifying the initinal size of the inventory.
-	 * @param size
+	 * Class constructor specifying the initial size of the inventory.
+	 * @param size to initialize the inventory to
 	 */
 	public Inventory(int size) {
 		this.contents = new SupplyStack[size];

@@ -10,7 +10,7 @@ public abstract class StaticEntity extends Entity{
 	
 	/**
 	 * Class constructor specifying the location of the entity
-	 * @param location
+	 * @param location where to place the entity
 	 */
 	public StaticEntity(Location location) {
 		super(location);

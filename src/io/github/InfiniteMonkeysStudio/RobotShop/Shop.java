@@ -20,7 +20,7 @@ public class Shop implements Drawable{
 	
 	/**
 	 * Adds a building to the shop
-	 * @param building
+	 * @param building to add
 	 * @return true if the building was not a duplicate.
 	 */
 	public boolean addBuilding(Building building) {

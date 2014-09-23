@@ -14,8 +14,8 @@ public class Wall extends StaticEntity{
 	
 	/**
 	 * Class constructor
-	 * @param location
-	 * @param type
+	 * @param location where to place the wall
+	 * @param type of wall to create
 	 */
 	public Wall(Location location, String type) {
 		super(location);
@@ -24,7 +24,7 @@ public class Wall extends StaticEntity{
 	
 	/**
 	 * Class constructor. Type will default to default.
-	 * @param location
+	 * @param location where to place the wall
 	 */
 	public Wall(Location location) {
 		super(location);
@@ -37,14 +37,14 @@ public class Wall extends StaticEntity{
 	}
 
 	/**
-	 * @return the type
+	 * @return type of the wall
 	 */
 	public String getType() {
 		return type;
 	}
 
 	/**
-	 * @param type the type to set
+	 * @param type to set the wall to
 	 */
 	public void setType(String type) {
 		this.type = type;

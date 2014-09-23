@@ -15,9 +15,9 @@ public class SupplyStack extends StaticEntity{
 	
 	/**
 	 * Class constructor specifying a location and type for the supply stack. 
-	 * quantity will default to 1.
-	 * @param location
-	 * @param type
+	 * Quantity will default to 1.
+	 * @param location where to place the stack
+	 * @param type of stack to create
 	 */
 	public SupplyStack(Location location, Supply type) {
 		super(location);
@@ -27,9 +27,9 @@ public class SupplyStack extends StaticEntity{
 	
 	/**
 	 * Class constructor specifying the quantity in the stack.
-	 * @param location
-	 * @param type
-	 * @param quantity
+	 * @param location where to place the stack
+	 * @param type of stack to create
+	 * @param quantity of items in the stack
 	 */
 	public SupplyStack(Location location, Supply type, int quantity) {
 		super(location);
@@ -49,8 +49,8 @@ public class SupplyStack extends StaticEntity{
 	 * Sets the type of the supply stack.
 	 * The quantity will be unchanged.
 	 * Returns true if the new type is different than the original.
-	 * @param newType
-	 * @return 
+	 * @param newType to change the stack to
+	 * @return true if the stack is changed by the call
 	 */
 	public boolean setType(Supply newType) {
 		if(newType.equals(this.type)) {
@@ -73,8 +73,8 @@ public class SupplyStack extends StaticEntity{
 	/**
 	 * Sets the quantity for the stack.
 	 * Returns true if the quantity changed because of the call
-	 * @param newQuantity
-	 * @return
+	 * @param newQuantity to set for the stack
+	 * @return true if the stack is changed by the call
 	 */
 	public boolean setSize(int newQuantity) {
 		if(newQuantity == quantity) {

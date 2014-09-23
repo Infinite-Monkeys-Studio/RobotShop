@@ -12,16 +12,30 @@ public class Supply {
 	
 	/**
 	 * Class constructor Specifying the type of the supply
-	 * @param type
+	 * @param type of supply
 	 */
 	public Supply(String type){
-		this.type = type;
+		this.setType(type);
 	}
 	
 	/**
 	 * Class constructor. type will be default.
 	 */
 	public Supply() {
-		this.type = "default";
+		this.setType("default");
+	}
+
+	/**
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
 	}
 }

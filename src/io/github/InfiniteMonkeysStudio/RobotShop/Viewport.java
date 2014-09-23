@@ -22,7 +22,7 @@ public class Viewport extends PApplet {
 		// create the shop
 		shop = new Shop();
 		
-		createDummyInitialShop();
+		createDummyInitialShop(); //DO Add loading and saving
 		
 		return;
 	}
@@ -31,10 +31,11 @@ public class Viewport extends PApplet {
 	void createDummyInitialShop()
 	{
 		Building b1 = new Building();
+		Worker w1 = new Worker(new Location(5, 5));
 		shop.addBuilding(b1);
 		
-		b1.insertEntity() //// and so on???
-		
+		b1.addEntity(w1);
+		//ADD More stuff here
 		
 	}
 
@@ -43,8 +44,7 @@ public class Viewport extends PApplet {
 	 * Called once per frame by the PApplet.
 	 */
 	public void draw() {
-		rect(10,10,10,10);
-		
+		shop.draw(this);
 		
 		return;
 	}

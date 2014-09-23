@@ -2,12 +2,14 @@ package io.github.InfiniteMonkeysStudio.RobotShop;
 
 import java.util.ArrayList;
 
+import processing.core.PApplet;
+
 /**
  * This is a section of the shop.
  * @author Quinn
  *
  */
-public class Building {
+public class Building implements Drawable{
 	
 	ArrayList<Entity> entityList;
 	
@@ -40,5 +42,21 @@ public class Building {
 	public Building() {
 		this.name = null;
 		this.type = "Default";
+	}
+	
+	/**
+	 * Add an entity to this building.
+	 * The entity will be placed at it's location
+	 * @param entity
+	 * @return true if this building changed as a result of the call
+	 */
+	public boolean addEntity(Entity entity) {
+		return entityList.add(entity);
+	}
+
+	@Override
+	public void draw(PApplet canvas) {
+		for(Entity e : entityList)
+			e.draw(canvas);
 	}
 }

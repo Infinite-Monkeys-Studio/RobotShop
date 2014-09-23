@@ -10,7 +10,7 @@ import java.io.Serializable;
 public abstract class Entity implements Drawable, Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	private Location location;
+	protected Location location;
 	/**
 	 * Class constructor specifying the location where the entity exists.
 	 * @param location The location of the entity

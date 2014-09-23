@@ -33,4 +33,20 @@ public class Location {
 		//this.building = new Building();   ???
 	}
 	
+	/**
+	 * Get the X of this location
+	 * @return double the X vector of this location
+	 */
+	public double getX() {
+		return x;
+	}
+	
+	/**
+	 * Get the Y of this location
+	 * @return double the Y vector of this location
+	 */
+	public double getY() {
+		return y;
+	}
 }
+

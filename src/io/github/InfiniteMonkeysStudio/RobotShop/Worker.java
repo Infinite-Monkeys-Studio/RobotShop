@@ -29,8 +29,9 @@ public class Worker extends MovingEntity{
 
 	@Override
 	public void draw(PApplet canvas) {
-		// TODO Auto-generated method stub
-		
+		canvas.pushMatrix();
+		canvas.translate((float) location.getX(), (float) location.getY());
+		canvas.rect(0,0,10,10);
+		canvas.popMatrix();
 	}
-
 }

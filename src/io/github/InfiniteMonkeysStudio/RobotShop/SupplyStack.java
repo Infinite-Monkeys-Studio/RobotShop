@@ -1,4 +1,7 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
+
+import processing.core.PApplet;
+
 /**
  * A stack of supplys.
  * @author Quinn
@@ -6,6 +9,7 @@ package io.github.InfiniteMonkeysStudio.RobotShop;
  */
 public class SupplyStack extends StaticEntity{
 	
+	private static final long serialVersionUID = 1L;
 	private Supply type;
 	private int quantity;
 	
@@ -22,7 +26,7 @@ public class SupplyStack extends StaticEntity{
 	}
 	
 	/**
-	 * Class construtor specifying the quantity in the stack.
+	 * Class constructor specifying the quantity in the stack.
 	 * @param location
 	 * @param type
 	 * @param quantity
@@ -80,5 +84,11 @@ public class SupplyStack extends StaticEntity{
 			quantity = newQuantity;
 			return true;
 		}
+	}
+
+	@Override
+	public void draw(PApplet canvas) {
+		// TODO Auto-generated method stub
+		
 	}
 }

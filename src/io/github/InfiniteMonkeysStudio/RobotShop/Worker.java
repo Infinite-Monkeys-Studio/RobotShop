@@ -1,6 +1,7 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 /**
  * Represents a worker.
@@ -20,19 +21,37 @@ public class Worker extends MovingEntity{
 	 */
 	public Worker(Location location, Inventory inventory) {
 		super(location);
-		this.inventory = inventory;
+		this.setInventory(inventory);
 	}
 	
 	public Worker(Location location) {
 		super(location);
-		this.inventory = new Inventory();
+		this.setInventory(new Inventory());
 	}
 
 	@Override
 	public void draw(PApplet canvas) {
 		canvas.pushMatrix();
 		canvas.translate((float) location.getX(), (float) location.getY());
-		canvas.rect(0,0,10,10);
+		canvas.textAlign(PConstants.CENTER);
+		canvas.fill(0);
+		canvas.text("Worker", 0, -6);
+		canvas.fill(100, 100, 255);
+		canvas.ellipse(0, 0, 10, 10);
 		canvas.popMatrix();
+	}
+
+	/**
+	 * @return the inventory
+	 */
+	public Inventory getInventory() {
+		return inventory;
+	}
+
+	/**
+	 * @param inventory the inventory to set
+	 */
+	public void setInventory(Inventory inventory) {
+		this.inventory = inventory;
 	}
 }

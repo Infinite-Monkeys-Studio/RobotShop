@@ -12,7 +12,7 @@ public class Viewport extends PApplet {
 	private static final long serialVersionUID = 1L;
 	private Location location; //viewport location
 	
-	Shop shop;
+	private Shop shop;
 	
 	/**
 	 * Called once at the start of the PApplet.
@@ -22,7 +22,8 @@ public class Viewport extends PApplet {
 		
 		// create the shop
 		shop = new Shop();
-		
+		this.getParent().getParent().setName("Robot Shop");
+		this.getParent().setName("Robot Shop");
 		createDummyInitialShop(); //DO Add loading and saving
 		
 		return;
@@ -32,10 +33,12 @@ public class Viewport extends PApplet {
 	void createDummyInitialShop()
 	{
 		Building b1 = new Building();
-		Worker w1 = new Worker(new Location(5, 5));
+		Worker w1 = new Worker(new Location(100, 100));
+		Machine m1 = new Machine(new Location(400, 300), "Example");
 		shop.addBuilding(b1);
 		
 		b1.addEntity(w1);
+		b1.addEntity(m1);
 		//ADD More stuff here
 		
 	}
@@ -45,6 +48,7 @@ public class Viewport extends PApplet {
 	 * Called once per frame by the PApplet.
 	 */
 	public void draw() {
+		background(237, 201, 175);
 		shop.draw(this);
 		
 		return;

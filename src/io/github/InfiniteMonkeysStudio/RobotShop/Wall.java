@@ -33,8 +33,7 @@ public class Wall extends StaticEntity{
 
 	@Override
 	public void draw(PApplet canvas) {
-		// TODO Auto-generated method stub
-		
+				
 	}
 
 	/**

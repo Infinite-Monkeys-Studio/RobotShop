@@ -1,6 +1,7 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 /**
  * This is a mechanism that does stuff.
@@ -24,8 +25,15 @@ public class Machine extends StaticEntity{
 
 	@Override
 	public void draw(PApplet canvas) {
-		// TODO Auto-generated method stub
-		
+		canvas.pushMatrix();
+		canvas.translate(location.getX(), location.getY());
+		canvas.textAlign(PConstants.CENTER);
+		canvas.fill(0);
+		canvas.text("Machine", 0, -8);
+		canvas.text(type, 0, 13);
+		canvas.fill(150);
+		canvas.rect(-5, -5, 10, 10);
+		canvas.popMatrix();
 	}
 
 	/**

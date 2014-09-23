@@ -29,18 +29,17 @@ public class Viewport extends PApplet {
 		return;
 	}
 
-	
-	void createDummyInitialShop()
-	{
+	private void createDummyInitialShop() {
 		Building b1 = new Building();
-		Worker w1 = new Worker(new Location(100, 100));
+		Worker w1 = new Worker(new Location(100, 100), "Phil");
 		Machine m1 = new Machine(new Location(400, 300), "Example");
+		Wall wall = new Wall(new Location(200,150));
 		shop.addBuilding(b1);
 		
 		b1.addEntity(w1);
 		b1.addEntity(m1);
+		b1.addEntity(wall);
 		//ADD More stuff here
-		
 	}
 
 	

@@ -1,6 +1,7 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 /**
  * Represents a static immovable hard thing.
@@ -31,9 +32,19 @@ public class Wall extends StaticEntity{
 		this.setType("default");
 	}
 
+	/**
+	 * Cause the wall to draw on the canvas
+	 * @param PApplet the canvas to draw on
+	 */
 	@Override
 	public void draw(PApplet canvas) {
-				
+		canvas.pushMatrix();
+		canvas.translate(location.getX(), location.getY());
+		canvas.fill(0);
+		canvas.textAlign(PConstants.CENTER);
+		canvas.text("Wall", 0, -7);
+		canvas.rect(-5, -5, 10, 10);
+		canvas.popMatrix();
 	}
 
 	/**

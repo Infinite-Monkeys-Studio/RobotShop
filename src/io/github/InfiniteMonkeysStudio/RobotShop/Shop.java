@@ -13,8 +13,10 @@ public class Shop implements Drawable{
 	
 	ArrayList<Building> buildingList;
 	
+	/**
+	 * Class constructor
+	 */
 	Shop() {
-		//FIXME make this.
 		buildingList = new ArrayList<Building>();
 	}
 	
@@ -27,6 +29,11 @@ public class Shop implements Drawable{
 		return buildingList.add(building);
 	}
 	
+	/**
+	 * Draws the entire shop
+	 * Works by calling draw on all the buildings in the shop
+	 * @param PApplet the canvas to draw on
+	 */
 	public void draw(PApplet canvis) {
 		for(Building b : buildingList)
 			b.draw(canvis);

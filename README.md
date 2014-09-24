@@ -26,14 +26,14 @@ Our plan is to release a free alpha as soon as we can.
 
 ###Game Play Notes:
 ---
-***These will not be grammatically correct, spelled conventinoaly, or coherent in any way***
+***These will not be grammatically correct, spelled conventinoaly, or coherent in any way***  
 You will start the game with only one human worker (Meant to be you.) Then you will get more human workers. all workers will have to be told what to do every step of the way.
 After a while you will be able to make robots but they will still be need to be told what to do every step. When you discover/earn/invent AI then you will have to write the "thinking."
 We will write a language to write this "thinking" it is yet to be decided what the language will look like.  
 
 There will be machines. these are different than the robots. They are stationary they must be fed anything they work with. Also you will not be able to design them. you will have to buy blue prints.
 
-Supplies are the basic building material of anything. there will be more and more types of scrape as the building projects get more complex. 
+Supplies are the basic building material of anything. there will be more and more types of scrape as the building projects get more complex.   
 Examples of supplies: 
 *  Scrap (will be the cheapest, can be refined into some of the other supplies)
 *  Sheet metal (basic construction of everything)

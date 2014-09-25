@@ -10,7 +10,7 @@ import processing.core.PApplet;
 public class Viewport extends PApplet {
 
 	private static final long serialVersionUID = 1L;
-	private Location location; //viewport location
+	private Location location; //FIXME Remove this.
 	
 	private Shop shop;
 	
@@ -35,11 +35,21 @@ public class Viewport extends PApplet {
 		Machine m1 = new Machine(new Location(400, 300), "Example");
 		Wall wall = new Wall(new Location(200,150));
 		
+		SupplyStack ss1 = new SupplyStack(new Location(200, 100), new Supply(SupplyType.CIRCUITS));
+		SupplyStack ss2 = new SupplyStack(new Location(300, 100), new Supply(SupplyType.SHEETMETAL));
+		SupplyStack ss3 = new SupplyStack(new Location(400, 100), new Supply(SupplyType.SCRAP));
+		SupplyStack ss4 = new SupplyStack(new Location(500, 100), new Supply(SupplyType.REFINEDPLASTICS));
+		
 		shop.addBuilding(b1);
 		
 		b1.addEntity(w1);
 		b1.addEntity(m1);
 		b1.addEntity(wall);
+		
+		b1.addEntity(ss1);
+		b1.addEntity(ss2);
+		b1.addEntity(ss3);
+		b1.addEntity(ss4);
 		
 		wall.setExtent(50);
 		wall.setNorthSouth(false);
@@ -51,7 +61,7 @@ public class Viewport extends PApplet {
 	 * Called once per frame by the PApplet.
 	 */
 	public void draw() {
-		background(237, 201, 175);
+		background(159,182,205);
 		shop.draw(this);
 		
 		return;

@@ -7,7 +7,7 @@ import processing.core.PApplet;
  * @author Quinn
  *
  */
-public class SupplyStack extends StaticEntity{
+public class SupplyStack extends PassiveEntity{
 	
 	private static final long serialVersionUID = 1L;
 	private Supply type;

@@ -8,7 +8,7 @@ import processing.core.PConstants;
  * @author Quinn
  *
  */
-public class Wall extends StaticEntity{
+public class Wall extends PassiveEntity{
 
 	private static final long serialVersionUID = 1L;
 	private String type; //TODO make Wall enum

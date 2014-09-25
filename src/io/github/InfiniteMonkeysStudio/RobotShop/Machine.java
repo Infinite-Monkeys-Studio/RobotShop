@@ -8,7 +8,7 @@ import processing.core.PConstants;
  * @author Quinn
  *
  */
-public class Machine extends StaticEntity{
+public class Machine extends PassiveEntity{
 
 	private static final long serialVersionUID = 1L;
 	private String type; //TODO Make MachineEnum

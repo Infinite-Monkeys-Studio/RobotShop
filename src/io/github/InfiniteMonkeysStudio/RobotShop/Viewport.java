@@ -34,11 +34,15 @@ public class Viewport extends PApplet {
 		Worker w1 = new Worker(new Location(100, 100), "Phil");
 		Machine m1 = new Machine(new Location(400, 300), "Example");
 		Wall wall = new Wall(new Location(200,150));
+		
 		shop.addBuilding(b1);
 		
 		b1.addEntity(w1);
 		b1.addEntity(m1);
 		b1.addEntity(wall);
+		
+		wall.setExtent(50);
+		wall.setNorthSouth(false);
 		//ADD More stuff here
 	}
 

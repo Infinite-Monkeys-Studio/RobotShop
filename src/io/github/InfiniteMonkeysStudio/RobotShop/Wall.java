@@ -12,6 +12,8 @@ public class Wall extends PassiveEntity{
 
 	private static final long serialVersionUID = 1L;
 	private String type; //DO there is only one type of wall
+	private float extent;
+	private boolean northSouth;
 	
 	/**
 	 * Class constructor
@@ -21,6 +23,8 @@ public class Wall extends PassiveEntity{
 	public Wall(Location location, String type) {
 		super(location);
 		this.setType(type);
+		northSouth = true;
+		extent = 10;
 	}
 	
 	/**
@@ -30,6 +34,8 @@ public class Wall extends PassiveEntity{
 	public Wall(Location location) {
 		super(location);
 		this.setType("default");
+		northSouth = true;
+		extent = 10;
 	}
 
 	/**
@@ -43,7 +49,12 @@ public class Wall extends PassiveEntity{
 		canvas.fill(0);
 		canvas.textAlign(PConstants.CENTER);
 		canvas.text("Wall", 0, -7);
-		canvas.rect(-5, -5, 10, 10);
+		if(northSouth) {
+			canvas.rect(-5, -5, 10, extent);
+		} else {
+			canvas.rect(-5, -5, extent, 10);
+		}
+		
 		canvas.popMatrix();
 	}
 
@@ -59,5 +70,35 @@ public class Wall extends PassiveEntity{
 	 */
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	/**
+	 * extent is the total length on the long side
+	 * @return the extent
+	 */
+	public float getExtent() {
+		return extent;
+	}
+
+	/**
+	 * extent is the total length on the long side
+	 * @param extent to set
+	 */
+	public void setExtent(float extent) {
+		this.extent = extent;
+	}
+
+	/**
+	 * @return if this wall is a north-south wall
+	 */
+	public boolean isNorthSouth() {
+		return northSouth;
+	}
+
+	/**
+	 * @param true means it will be a north-south wall
+	 */
+	public void setNorthSouth(boolean northSouth) {
+		this.northSouth = northSouth;
 	}
 }

@@ -9,12 +9,12 @@ import processing.core.PConstants;
  * @author Quinn
  *
  */
-public class Worker extends MovingEntity{
+public class Worker extends MovingEntity implements Selectable{
 	
 	private static final long serialVersionUID = 1L;
 	private Inventory inventory;
 	private String name;
-	
+	private boolean selected;
 	/**
 	 * Class construtor.
 	 * @param location of the worker
@@ -26,6 +26,11 @@ public class Worker extends MovingEntity{
 		this.setName(name);
 	}
 	
+	/**
+	 * Class constructor
+	 * @param location of the worker
+	 * @param name of the worker
+	 */
 	public Worker(Location location, String name) {
 		super(location);
 		this.setInventory(new Inventory());
@@ -71,5 +76,22 @@ public class Worker extends MovingEntity{
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@Override
+	public boolean isSelected() {
+		return selected;
+	}
+
+	@Override
+	public void select() {
+		selected = true;
+		return;
+	}
+
+	@Override
+	public void unselect() {
+		selected = false;
+		return;
 	}
 }

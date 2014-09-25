@@ -1,16 +1,17 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 /**
- * A stack of supplys.
+ * A stack of supplies
  * @author Quinn
  *
  */
 public class SupplyStack extends PassiveEntity{
 	
 	private static final long serialVersionUID = 1L;
-	private Supply type;
+	private Supply supply;
 	private int quantity;
 	
 	/**
@@ -21,7 +22,7 @@ public class SupplyStack extends PassiveEntity{
 	 */
 	public SupplyStack(Location location, Supply type) {
 		super(location);
-		this.type = type;
+		this.supply = type;
 		this.quantity = 1;
 	}
 	
@@ -33,7 +34,7 @@ public class SupplyStack extends PassiveEntity{
 	 */
 	public SupplyStack(Location location, Supply type, int quantity) {
 		super(location);
-		this.type = type;
+		this.supply = type;
 		this.quantity = quantity;
 	}
 	
@@ -42,7 +43,7 @@ public class SupplyStack extends PassiveEntity{
 	 * @return type
 	 */
 	public Supply getType() {
-		return type;
+		return supply;
 	}
 	
 	/**
@@ -53,18 +54,18 @@ public class SupplyStack extends PassiveEntity{
 	 * @return true if the stack is changed by the call
 	 */
 	public boolean setType(Supply newType) {
-		if(newType.equals(this.type)) {
-			this.type = newType;
+		if(newType.equals(this.supply)) {
+			this.supply = newType;
 			return false;
 		} else {
-			this.type = newType;
+			this.supply = newType;
 			return true;
 		}
 	}
 	
 	/**
 	 * Returns the size of the supply stack.
-	 * @return int
+	 * @return the number of supplies in this stack
 	 */
 	public int getSize() {
 		return quantity;
@@ -88,7 +89,37 @@ public class SupplyStack extends PassiveEntity{
 
 	@Override
 	public void draw(PApplet canvas) {
-		// FIXME Write the draw
+		String name = "ERROR!";
 		
+		canvas.pushMatrix();
+		canvas.translate(location.getX(), location.getY());
+		canvas.fill(0);
+		canvas.textAlign(PConstants.CENTER);
+		canvas.text("Supply Stack", 0, -7);
+		switch(supply.getType()) {
+		case CIRCUITS:
+			name = "Circuits";
+			canvas.fill(0,128,0);
+			break;
+		case REFINEDPLASTICS:
+			name = "Refined Plastics";
+			canvas.fill(255,235,205);
+			break;
+		case SCRAP:
+			name = "Scrap";
+			canvas.fill(74,74,74);
+			break;
+		case SHEETMETAL:
+			name = "Sheet Metal";
+			canvas.fill(0,46,61);
+			break;
+		default:
+			name = "ERROR!";
+			canvas.fill(255,0,0);
+			break;
+		}
+		canvas.rect(-5, -5, 10, 10);
+		canvas.text(name, 0, 15);
+		canvas.popMatrix();
 	}
 }

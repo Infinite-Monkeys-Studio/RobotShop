@@ -1,6 +1,6 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 /**
- * Not sure what this is. maybe unneeded.
+ * This represents an entity that cannot move it's self
  * @author Quinn
  *
  */
@@ -14,7 +14,6 @@ public abstract class PassiveEntity extends Entity{
 	 */
 	public PassiveEntity(Location location) {
 		super(location);
-		// TODO Auto-generated constructor stub
 	}
 	
 }

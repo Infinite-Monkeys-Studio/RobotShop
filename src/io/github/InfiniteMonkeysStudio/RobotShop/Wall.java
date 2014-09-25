@@ -11,7 +11,7 @@ import processing.core.PConstants;
 public class Wall extends PassiveEntity{
 
 	private static final long serialVersionUID = 1L;
-	private String type; //TODO make Wall enum
+	private String type; //DO there is only one type of wall
 	
 	/**
 	 * Class constructor

@@ -14,7 +14,6 @@ public abstract class MovingEntity extends Entity{
 	 */
 	public MovingEntity(Location location) {
 		super(location);
-		// TODO Auto-generated constructor stub
 	}
 
 }

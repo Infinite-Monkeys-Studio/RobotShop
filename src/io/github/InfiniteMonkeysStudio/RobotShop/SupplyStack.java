@@ -88,7 +88,7 @@ public class SupplyStack extends PassiveEntity{
 
 	@Override
 	public void draw(PApplet canvas) {
-		// TODO Auto-generated method stub
+		// FIXME Write the draw
 		
 	}
 }

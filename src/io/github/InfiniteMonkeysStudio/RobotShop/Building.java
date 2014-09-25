@@ -13,7 +13,7 @@ public class Building implements Drawable{
 	
 	private ArrayList<Entity> entityList;
 	private String name;
-	private String type;//TODO write an enum
+	private String type;//DO write an enum
 	/**
 	 * Class constructor Type will be "default."
 	 * @param name of the building

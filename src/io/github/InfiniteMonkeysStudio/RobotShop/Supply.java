@@ -2,13 +2,13 @@ package io.github.InfiniteMonkeysStudio.RobotShop;
 
 /**
  * A single supply.
- * TODO make an enum
+ * DO make an enum
  * @author Quinn
  *
  */
 public class Supply {
 	
-	private String type; //TODO make enum
+	private String type; //DO make enum
 	
 	/**
 	 * Class constructor Specifying the type of the supply

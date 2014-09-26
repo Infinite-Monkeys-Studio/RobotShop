@@ -1,5 +1,5 @@
 #RobotShop
-*By: Infinite Monkeys Studio*
+*By: Infinite Monkeys Studio*  
 Start from a simple machine shop and build a buzzing mechanized mass-assembly plant.
 
 ###Game Play:

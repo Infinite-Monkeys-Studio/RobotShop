@@ -9,7 +9,6 @@ You are the owner of a shop that designs, manufactures and sells robots.  You st
 ###Nuts & Bolts:
 ---
 We are working in Java with the render and control libraries from processing. We will phase out any involvement with processing before releasing.  
-[Class layout](https://realtimeboard.com/app/60158466/Robot-Shop)  
 We like to encourage modding. To that end we have provided [Javadocs](http://InfiniteMonkeysStudio.bitbucket.org)
 
 ###Instructions for compiling:

@@ -90,12 +90,15 @@ public class SupplyStack extends PassiveEntity{
 	@Override
 	public void draw(Viewport canvas) {
 		String name = "ERROR!";
+		float screenX = canvas.getScreenX(location);
+		float screenY = canvas.getScreenY(location);
+		final int s = Viewport.getScale();
 		
 		canvas.pushMatrix();
-		canvas.translate(location.getX(), location.getY());
+		canvas.translate(screenX, screenY);
 		canvas.fill(0);
 		canvas.textAlign(PConstants.CENTER);
-		canvas.text("Supply Stack", 0, -7);
+		canvas.text("Supply Stack", s/2, 0);
 		switch(supply.getType()) {
 		case CIRCUITS:
 			name = "Circuits";
@@ -118,8 +121,8 @@ public class SupplyStack extends PassiveEntity{
 			canvas.fill(255,0,0);
 			break;
 		}
-		canvas.rect(-5, -5, 10, 10);
-		canvas.text(name, 0, 15);
+		canvas.rect(0, 0, s, s);
+		canvas.text(name, s/2, s/2);
 		canvas.popMatrix();
 	}
 }

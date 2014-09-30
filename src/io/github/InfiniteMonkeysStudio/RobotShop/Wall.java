@@ -1,6 +1,5 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
-import processing.core.PApplet;
 import processing.core.PConstants;
 
 /**
@@ -24,7 +23,7 @@ public class Wall extends PassiveEntity{
 		super(location);
 		this.setType(type);
 		northSouth = true;
-		extent = 10;
+		extent = 3;
 	}
 	
 	/**
@@ -35,7 +34,7 @@ public class Wall extends PassiveEntity{
 		super(location);
 		this.setType("default");
 		northSouth = true;
-		extent = 10;
+		extent = 3;
 	}
 
 	/**
@@ -44,17 +43,21 @@ public class Wall extends PassiveEntity{
 	 */
 	@Override
 	public void draw(Viewport canvas) {
-		canvas.pushMatrix();
-		canvas.translate(location.getX(), location.getY());
-		canvas.fill(0);
-		canvas.textAlign(PConstants.CENTER);
-		canvas.text("Wall", 0, -7);
-		if(northSouth) {
-			canvas.rect(-5, -5, 10, extent);
-		} else {
-			canvas.rect(-5, -5, extent, 10);
-		}
+		float screenX = canvas.getScreenX(location);
+		float screenY = canvas.getScreenY(location);
+		final int s = Viewport.getScale();
 		
+		canvas.pushMatrix();
+		canvas.translate(screenX, screenY);
+		canvas.fill(0);
+		if(northSouth) {
+			canvas.rect(0, 0, s, extent * s);
+		} else {
+			canvas.rect(0, 0, extent * s, s);
+		}
+		canvas.fill(255);
+		canvas.textAlign(PConstants.CENTER);
+		canvas.text("Wall", (extent * s) / 2, s/2);
 		canvas.popMatrix();
 	}
 

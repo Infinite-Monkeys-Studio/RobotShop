@@ -33,13 +33,13 @@ public class Viewport extends PApplet {
 	private void createDummyInitialShop() {
 		Building b1 = new Building();
 		Worker w1 = new Worker(new Location(4, 4), "Phil");
-		Machine m1 = new Machine(new Location(400, 300), "Example");
-		Wall wall = new Wall(new Location(200,150));
+		Machine m1 = new Machine(new Location(10, 10), "Example");
+		Wall wall = new Wall(new Location(3,2));
 		
-		SupplyStack ss1 = new SupplyStack(new Location(200, 100), new Supply(SupplyType.CIRCUITS));
-		SupplyStack ss2 = new SupplyStack(new Location(300, 100), new Supply(SupplyType.SHEETMETAL));
-		SupplyStack ss3 = new SupplyStack(new Location(400, 100), new Supply(SupplyType.SCRAP));
-		SupplyStack ss4 = new SupplyStack(new Location(500, 100), new Supply(SupplyType.REFINEDPLASTICS));
+		SupplyStack ss1 = new SupplyStack(new Location(2, 1), new Supply(SupplyType.CIRCUITS));
+		SupplyStack ss2 = new SupplyStack(new Location(3, 1), new Supply(SupplyType.SHEETMETAL));
+		SupplyStack ss3 = new SupplyStack(new Location(4, 1), new Supply(SupplyType.SCRAP));
+		SupplyStack ss4 = new SupplyStack(new Location(5, 1), new Supply(SupplyType.REFINEDPLASTICS));
 		
 		shop.addBuilding(b1);
 		
@@ -52,7 +52,7 @@ public class Viewport extends PApplet {
 		b1.addEntity(ss3);
 		b1.addEntity(ss4);
 		
-		wall.setExtent(50);
+		wall.setExtent(2);
 		wall.setNorthSouth(false);
 		//ADD More stuff here
 	}

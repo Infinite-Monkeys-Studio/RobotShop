@@ -87,6 +87,10 @@ public class SupplyStack extends PassiveEntity{
 		}
 	}
 
+	/**
+	 * Cause the SupplyStack to draw on the canvas
+	 * @param canvas the Viewport to draw on
+	 */
 	@Override
 	public void draw(Viewport canvas) {
 		String name = "ERROR!";

@@ -18,6 +18,7 @@ public class Worker extends MovingEntity implements Selectable{
 	/**
 	 * Class construtor.
 	 * @param location of the worker
+	 * @param name of the worker
 	 * @param inventory to give the worker
 	 */
 	public Worker(Location location, String name, Inventory inventory) {
@@ -37,6 +38,10 @@ public class Worker extends MovingEntity implements Selectable{
 		this.setName(name);
 	}
 
+	/**
+	 * Cause the Worker to draw on the canvas
+	 * @param canvas the Viewport to draw on
+	 */
 	@Override
 	public void draw(Viewport canvas) {
 		float screenX = canvas.getScreenX(location);

@@ -32,7 +32,7 @@ public class Shop implements Drawable{
 	/**
 	 * Draws the entire shop
 	 * Works by calling draw on all the buildings in the shop
-	 * @param PApplet the canvas to draw on
+	 * @param canvis the Viewport to draw on
 	 */
 	public void draw(Viewport canvis) {
 		for(Building b : buildingList)

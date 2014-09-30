@@ -39,7 +39,7 @@ public class Wall extends PassiveEntity{
 
 	/**
 	 * Cause the wall to draw on the canvas
-	 * @param PApplet the canvas to draw on
+	 * @param canvas the Viewport to draw on
 	 */
 	@Override
 	public void draw(Viewport canvas) {
@@ -99,7 +99,7 @@ public class Wall extends PassiveEntity{
 	}
 
 	/**
-	 * @param true means it will be a north-south wall
+	 * @param northSouth true means it will be a north-south wall
 	 */
 	public void setNorthSouth(boolean northSouth) {
 		this.northSouth = northSouth;

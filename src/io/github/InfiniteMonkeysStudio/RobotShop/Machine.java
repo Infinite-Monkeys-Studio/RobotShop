@@ -23,6 +23,10 @@ public class Machine extends PassiveEntity{
 		this.setType(type);
 	}
 
+	/**
+	 * Cause the Machine to draw on the canvas
+	 * @param canvas the Viewport to draw on
+	 */
 	@Override
 	public void draw(Viewport canvas) {
 		float screenX = canvas.getScreenX(location);

@@ -88,7 +88,7 @@ public class SupplyStack extends PassiveEntity{
 	}
 
 	@Override
-	public void draw(PApplet canvas) {
+	public void draw(Viewport canvas) {
 		String name = "ERROR!";
 		
 		canvas.pushMatrix();

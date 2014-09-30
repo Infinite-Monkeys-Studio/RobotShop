@@ -38,7 +38,7 @@ public class Worker extends MovingEntity implements Selectable{
 	}
 
 	@Override
-	public void draw(PApplet canvas) {
+	public void draw(Viewport canvas) {
 		canvas.pushMatrix();
 		canvas.translate((float) location.getX(), (float) location.getY());
 		canvas.textAlign(PConstants.CENTER);

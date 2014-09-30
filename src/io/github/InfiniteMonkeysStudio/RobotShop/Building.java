@@ -57,7 +57,7 @@ public class Building implements Drawable{
 	}
 
 	@Override
-	public void draw(PApplet canvas) {
+	public void draw(Viewport canvas) {
 		for(Entity e : entityList)
 			e.draw(canvas);
 	}

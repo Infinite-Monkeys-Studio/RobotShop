@@ -24,7 +24,7 @@ public class Machine extends PassiveEntity{
 	}
 
 	@Override
-	public void draw(PApplet canvas) {
+	public void draw(Viewport canvas) {
 		canvas.pushMatrix();
 		canvas.translate(location.getX(), location.getY());
 		canvas.textAlign(PConstants.CENTER);

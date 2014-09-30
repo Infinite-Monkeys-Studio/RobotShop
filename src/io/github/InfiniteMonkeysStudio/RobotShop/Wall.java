@@ -43,7 +43,7 @@ public class Wall extends PassiveEntity{
 	 * @param PApplet the canvas to draw on
 	 */
 	@Override
-	public void draw(PApplet canvas) {
+	public void draw(Viewport canvas) {
 		canvas.pushMatrix();
 		canvas.translate(location.getX(), location.getY());
 		canvas.fill(0);

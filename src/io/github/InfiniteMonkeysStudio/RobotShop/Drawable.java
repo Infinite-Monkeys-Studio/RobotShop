@@ -4,6 +4,6 @@ import processing.core.PApplet;
 
 public interface Drawable {
 
-	void draw(PApplet canvas);
+	void draw(Viewport canvas);
 	
 }

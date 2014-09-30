@@ -63,9 +63,14 @@ public class Viewport extends PApplet {
 	public void draw() {
 		background(159,182,205);
 		shop.draw(this);
-		
 		return;
 	}
 	
+	public float getScreenX(Location loc) {
+		return loc.getX() * 45;
+	}
 	
+	public float getScreenY(Location loc) {
+		return loc.getY() * 45;
+	}
 }

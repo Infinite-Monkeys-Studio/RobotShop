@@ -39,14 +39,17 @@ public class Worker extends MovingEntity implements Selectable{
 
 	@Override
 	public void draw(Viewport canvas) {
+		float screenX = canvas.getScreenX(location);
+		float screenY = canvas.getScreenY(location);
+		final int s = Viewport.getScale();
 		canvas.pushMatrix();
-		canvas.translate((float) location.getX(), (float) location.getY());
+		canvas.translate(screenX, screenY);
+		canvas.fill(100, 100, 255);
+		canvas.ellipse(s/2, s/2, s, s);
 		canvas.textAlign(PConstants.CENTER);
 		canvas.fill(0);
-		canvas.text("Worker", 0, -6);
-		canvas.text(name, 0, 17);
-		canvas.fill(100, 100, 255);
-		canvas.ellipse(0, 0, 10, 10);
+		canvas.text("Worker", s/2, 0);
+		canvas.text(name, s/2, s/2);
 		canvas.popMatrix();
 	}
 

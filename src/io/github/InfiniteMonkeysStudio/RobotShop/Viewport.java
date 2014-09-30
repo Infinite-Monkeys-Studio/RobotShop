@@ -11,6 +11,7 @@ public class Viewport extends PApplet {
 
 	private static final long serialVersionUID = 1L;
 	private Location location; //FIXME Remove this.
+	public static final int SCALE = 45;
 	
 	private Shop shop;
 	
@@ -31,7 +32,7 @@ public class Viewport extends PApplet {
 
 	private void createDummyInitialShop() {
 		Building b1 = new Building();
-		Worker w1 = new Worker(new Location(100, 100), "Phil");
+		Worker w1 = new Worker(new Location(4, 4), "Phil");
 		Machine m1 = new Machine(new Location(400, 300), "Example");
 		Wall wall = new Wall(new Location(200,150));
 		
@@ -66,11 +67,15 @@ public class Viewport extends PApplet {
 		return;
 	}
 	
+	public static final int getScale() {
+		return SCALE;
+	}
+	
 	public float getScreenX(Location loc) {
-		return loc.getX() * 45;
+		return loc.getX() * SCALE;
 	}
 	
 	public float getScreenY(Location loc) {
-		return loc.getY() * 45;
+		return loc.getY() * SCALE;
 	}
 }

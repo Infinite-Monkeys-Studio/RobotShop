@@ -58,6 +58,15 @@ public class Building implements Drawable{
 
 	@Override
 	public void draw(Viewport canvas) {
+		canvas.pushMatrix();
+		for(int x = 0; x < canvas.width; x += Viewport.getScale()) {
+			canvas.line(x, 0, x, canvas.getHeight());
+		}
+		
+		for(int y = 0; y < canvas.height; y += Viewport.getScale()) {
+			canvas.line(0, y, canvas.getWidth(), y);
+		}
+		canvas.popMatrix();
 		for(Entity e : entityList)
 			e.draw(canvas);
 	}

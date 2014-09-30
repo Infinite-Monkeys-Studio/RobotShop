@@ -25,14 +25,20 @@ public class Machine extends PassiveEntity{
 
 	@Override
 	public void draw(Viewport canvas) {
+		float screenX = canvas.getScreenX(location);
+		float screenY = canvas.getScreenY(location);
+		final int s = Viewport.getScale();
+		
 		canvas.pushMatrix();
-		canvas.translate(location.getX(), location.getY());
+		canvas.translate(screenX, screenY);
+		
+		canvas.fill(150);
+		canvas.rect(0, 0, s, s);
+		
 		canvas.textAlign(PConstants.CENTER);
 		canvas.fill(0);
-		canvas.text("Machine", 0, -8);
-		canvas.text(type, 0, 13);
-		canvas.fill(150);
-		canvas.rect(-5, -5, 10, 10);
+		canvas.text("Machine", s/2, 0);
+		canvas.text(type, s/2, s/2);
 		canvas.popMatrix();
 	}
 

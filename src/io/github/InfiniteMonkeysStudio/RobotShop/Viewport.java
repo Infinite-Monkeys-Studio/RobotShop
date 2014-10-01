@@ -1,5 +1,7 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 
 /**
@@ -75,16 +77,20 @@ public class Viewport extends PApplet {
 		println("Location is:" + loc.toString());
 		
 		if(shop.getCurrentBuilding().getEntityAt(loc) == null) {
-			Entity e = shop.getCurrentBuilding().getSelctedEntity();
-			if(e != null) {
-				e.setLocation(loc);
-				println("moved entity");
+			ArrayList<Entity> entityList = shop.getCurrentBuilding().getSelctedEntity();
+			println("empty space");
+			if(entityList != null) {
+				for(Entity e : entityList)
+					e.setLocation(loc);
+				println("moved " + entityList.size() + " entity");
 			}
-		} else 
-			if(shop.getCurrentBuilding().getEntityAt(loc) instanceof Worker) {
-				println("Selected Worker");
-				Worker worker = (Worker) shop.getCurrentBuilding().getEntityAt(loc);
-				worker.select();
+		} else {
+			Entity e = shop.getCurrentBuilding().getEntityAt(loc);
+			println("Selected Entity");
+			if(e.isSelected())
+				e.unselect();
+			else
+				e.select();
 		}
 	}
 }

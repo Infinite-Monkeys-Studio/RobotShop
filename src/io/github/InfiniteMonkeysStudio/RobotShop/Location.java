@@ -49,20 +49,24 @@ public class Location {
 		return y;
 	}
 	
+	public boolean sameAs(Location compare) {
+		return compare.getX() == this.getX() && compare.getY() == this.getY();
+	}
+	
 	public String toString() {
 		return x + " " + y;
 	}
 	
 	public static Location getLocation(float screenX, float screenY) {
-		return new Location((int) screenX / Viewport.SCALE, (int) screenY / Viewport.SCALE);
+		return new Location((int) ((screenX / Viewport.SCALE) + 1), (int) ((screenY / Viewport.SCALE) + 1));
 	}
 	
 	public static float getScreenX(Location loc) {
-		return loc.getX() * Viewport.SCALE;
+		return (loc.getX() - 1) * Viewport.SCALE;
 	}
 	
 	public static float getScreenY(Location loc) {
-		return loc.getY() * Viewport.SCALE;
+		return (loc.getY() - 1) * Viewport.SCALE;
 	}
 }
 

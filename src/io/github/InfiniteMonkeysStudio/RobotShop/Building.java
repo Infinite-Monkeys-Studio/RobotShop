@@ -78,7 +78,7 @@ public class Building implements Drawable{
 	 */
 	public Entity getEntityAt(Location location) {
 		for(Entity e : entityList) {
-			if (e.getLocation() == location) {
+			if (e.getLocation().sameAs(location)) {
 				return e;
 			}
 		}
@@ -86,15 +86,16 @@ public class Building implements Drawable{
 	}
 
 	/**
-	 * Get the selected entity
-	 * @return Entity that is selected, null if no entity is selected
+	 * Get all selected entities
+	 * @return ArrayList<Entity> all selected entities, null if no entities are selected
 	 */
-	public Entity getSelctedEntity() {
+	public ArrayList<Entity> getSelctedEntity() {
+		ArrayList<Entity> entityList = new ArrayList<Entity>();
 		for(Entity e : entityList) {
 			if (e.isSelected()) {
-				return e;
+				entityList.add(e);
 			}
 		}
-		return null;		
+		return entityList;		
 	}
 }

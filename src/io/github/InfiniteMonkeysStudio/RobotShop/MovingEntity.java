@@ -4,7 +4,7 @@ package io.github.InfiniteMonkeysStudio.RobotShop;
  * @author Quinn
  *
  */
-public abstract class MovingEntity extends Entity{
+public abstract class MovingEntity extends Entity implements Selectable{
 	
 	private static final long serialVersionUID = 1L;
 

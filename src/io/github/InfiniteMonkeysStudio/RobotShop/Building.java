@@ -84,4 +84,17 @@ public class Building implements Drawable{
 		}
 		return null;
 	}
+
+	/**
+	 * Get the selected entity
+	 * @return Entity that is selected, null if no entity is selected
+	 */
+	public Entity getSelctedEntity() {
+		for(Entity e : entityList) {
+			if (e.isSelected()) {
+				return e;
+			}
+		}
+		return null;		
+	}
 }

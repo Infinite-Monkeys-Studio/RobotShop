@@ -104,4 +104,22 @@ public class Wall extends PassiveEntity{
 	public void setNorthSouth(boolean northSouth) {
 		this.northSouth = northSouth;
 	}
+
+	@Override
+	public boolean isSelected() {
+		// FIXME Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void select() {
+		// FIXME Auto-generated method stub
+		
+	}
+
+	@Override
+	public void unselect() {
+		// FIXME Auto-generated method stub
+		
+	}
 }

@@ -151,4 +151,16 @@ public class SupplyStack extends PassiveEntity implements Clickable{
 	public void setSelected(boolean selected) {
 		this.selected = selected;
 	}
+
+	@Override
+	public void select() {
+		// FIXME Auto-generated method stub
+		
+	}
+
+	@Override
+	public void unselect() {
+		// FIXME Auto-generated method stub
+		
+	}
 }

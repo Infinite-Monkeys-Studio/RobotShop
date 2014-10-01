@@ -42,6 +42,8 @@ public class Viewport extends PApplet {
 		SupplyStack ss4 = new SupplyStack(new Location(5, 1), new Supply(SupplyType.REFINEDPLASTICS));
 		
 		shop.addBuilding(b1);
+		shop.getBuildingNumber(b1);
+		shop.setCurrentBuilding(shop.getBuildingNumber(b1));
 		
 		b1.addEntity(w1);
 		b1.addEntity(m1);
@@ -69,7 +71,16 @@ public class Viewport extends PApplet {
 	
 	public void mouseClicked() {
 		println("Click at x:" + this.mouseX + " y:" + this.mouseY);
-		println("Location is:" + getLocation(this.mouseX, this.mouseY).toString());
+		Location loc = getLocation(this.mouseX, this.mouseY);
+		println("Location is:" + loc.toString());
+		Entity e = shop.getCurrentBuilding().getEntityAt(loc);
+		if(e == null) {
+			e = shop.getCurrentBuilding().getSelctedEntity();
+			e.setLocation(loc);
+		} else if(e instanceof Worker) {
+			Worker worker = (Worker) e;
+			worker.select();
+		}
 	}
 	
 	public static final int getScale() {

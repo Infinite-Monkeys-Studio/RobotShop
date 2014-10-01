@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author Quinn
  *
  */
-public abstract class Entity implements Drawable, Serializable {
+public abstract class Entity implements Drawable, Serializable, Selectable {
 	
 	private static final long serialVersionUID = 1L;
 	protected Location location;

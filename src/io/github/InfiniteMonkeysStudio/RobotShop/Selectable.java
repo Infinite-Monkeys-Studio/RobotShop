@@ -6,8 +6,6 @@ package io.github.InfiniteMonkeysStudio.RobotShop;
  */
 
 public interface Selectable {
-	//public boolean selected;
-	
 	/**
 	 * Test if this object is selected
 	 * @return true if selected

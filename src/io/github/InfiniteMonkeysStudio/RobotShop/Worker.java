@@ -86,20 +86,5 @@ public class Worker extends MovingEntity{
 		this.name = name;
 	}
 	
-	@Override
-	public boolean isSelected() {
-		return selected;
-	}
-
-	@Override
-	public void select() {
-		selected = true;
-		return;
-	}
-
-	@Override
-	public void unselect() {
-		selected = false;
-		return;
-	}
+	
 }

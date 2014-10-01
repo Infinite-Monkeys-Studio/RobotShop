@@ -8,7 +8,7 @@ import java.io.Serializable;
  *
  */
 public abstract class Entity implements Drawable, Serializable, Selectable {
-	
+	private boolean selected;
 	private static final long serialVersionUID = 1L;
 	protected Location location;
 	/**
@@ -17,6 +17,7 @@ public abstract class Entity implements Drawable, Serializable, Selectable {
 	 */
 	public Entity(Location location) {
 		this.location = location;
+		this.selected = false;
 	}
 	
 	/**
@@ -41,5 +42,22 @@ public abstract class Entity implements Drawable, Serializable, Selectable {
 			this.location = location;
 			return true;
 		}
+	}
+	
+	@Override
+	public boolean isSelected() {
+		return selected;
+	}
+
+	@Override
+	public void select() {
+		selected = true;
+		return;
+	}
+
+	@Override
+	public void unselect() {
+		selected = false;
+		return;
 	}
 }

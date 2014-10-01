@@ -72,7 +72,7 @@ public class Viewport extends PApplet {
 	public void mouseClicked() {
 		println("Click at x:" + this.mouseX + " y:" + this.mouseY);
 		Location loc = Location.getLocation(this.mouseX, this.mouseY);
-		println("Location is:" + loc.toString()); 
+		println("Location is:" + loc.toString());
 		
 		if(shop.getCurrentBuilding().getEntityAt(loc) == null) {
 			Entity e = shop.getCurrentBuilding().getSelctedEntity();

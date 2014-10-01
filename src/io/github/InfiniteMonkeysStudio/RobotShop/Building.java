@@ -70,4 +70,18 @@ public class Building implements Drawable{
 		for(Entity e : entityList)
 			e.draw(canvas);
 	}
+
+	/**
+	 * Get the entity at a location
+	 * @param location to look for entity
+	 * @return Entity at location, null if no entity at that location
+	 */
+	public Entity getEntityAt(Location location) {
+		for(Entity e : entityList) {
+			if (e.getLocation() == location) {
+				return e;
+			}
+		}
+		return null;
+	}
 }

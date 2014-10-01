@@ -11,8 +11,8 @@ import processing.core.PApplet;
  */
 public class Shop implements Drawable{
 	
-	ArrayList<Building> buildingList;
-	
+	private ArrayList<Building> buildingList;
+	private int currentBuilding;
 	/**
 	 * Class constructor
 	 */
@@ -37,6 +37,22 @@ public class Shop implements Drawable{
 	public void draw(Viewport canvis) {
 		for(Building b : buildingList)
 			b.draw(canvis);
+	}
+
+	public Building getCurrentBuilding() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/**
+	 * @param currentBuilding the currentBuilding to set
+	 */
+	public void setCurrentBuilding(int buildingNumber) {
+		this.currentBuilding = buildingNumber;
+	}
+	
+	public int getBuildingNumber(Building building) {
+		return buildingList.indexOf(building);
 	}
 	
 }

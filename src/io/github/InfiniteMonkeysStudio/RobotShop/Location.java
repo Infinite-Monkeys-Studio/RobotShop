@@ -7,7 +7,7 @@ package io.github.InfiniteMonkeysStudio.RobotShop;
  */
 public class Location {
 	
-	private float x, y; //location in building
+	private int x, y; //location in building
 	private Building building; //Building of location
 	
 	/**
@@ -16,7 +16,7 @@ public class Location {
 	 * @param y The Y component of the location.
 	 * @param building The building the Location refers to.
 	 */
-	public Location(float x, float y, Building building){
+	public Location(int x, int y, Building building){
 		this.x = x;
 		this.y = y;
 		this.building = building;
@@ -27,7 +27,7 @@ public class Location {
 	 * @param x The X component of the location.
 	 * @param y The Y component of the location.
 	 */
-	public Location(float x, float y){
+	public Location(int x, int y){
 		this.x = x;
 		this.y = y;
 		//this.building = new Building();   ???
@@ -37,7 +37,7 @@ public class Location {
 	 * Get the X of this location
 	 * @return double the X vector of this location
 	 */
-	public float getX() {
+	public int getX() {
 		return x;
 	}
 	
@@ -45,8 +45,12 @@ public class Location {
 	 * Get the Y of this location
 	 * @return double the Y vector of this location
 	 */
-	public float getY() {
+	public int getY() {
 		return y;
+	}
+	
+	public String toString() {
+		return x + " " + y;
 	}
 }
 

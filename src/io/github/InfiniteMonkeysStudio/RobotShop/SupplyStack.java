@@ -8,11 +8,12 @@ import processing.core.PConstants;
  * @author Quinn
  *
  */
-public class SupplyStack extends PassiveEntity{
+public class SupplyStack extends PassiveEntity implements Clickable{
 	
 	private static final long serialVersionUID = 1L;
 	private Supply supply;
 	private int quantity;
+	private boolean selected;
 	
 	/**
 	 * Class constructor specifying a location and type for the supply stack. 
@@ -24,6 +25,7 @@ public class SupplyStack extends PassiveEntity{
 		super(location);
 		this.supply = type;
 		this.quantity = 1;
+		setSelected(false);
 	}
 	
 	/**
@@ -36,6 +38,7 @@ public class SupplyStack extends PassiveEntity{
 		super(location);
 		this.supply = type;
 		this.quantity = quantity;
+		setSelected(false);
 	}
 	
 	/**
@@ -86,7 +89,13 @@ public class SupplyStack extends PassiveEntity{
 			return true;
 		}
 	}
-
+	
+	
+	public void onClick(float mouseX, float mouseY) {
+		setSelected(true);
+		return;
+	}
+	
 	/**
 	 * Cause the SupplyStack to draw on the canvas
 	 * @param canvas the Viewport to draw on
@@ -97,12 +106,8 @@ public class SupplyStack extends PassiveEntity{
 		float screenX = canvas.getScreenX(location);
 		float screenY = canvas.getScreenY(location);
 		final int s = Viewport.getScale();
-		
 		canvas.pushMatrix();
 		canvas.translate(screenX, screenY);
-		canvas.fill(0);
-		canvas.textAlign(PConstants.CENTER);
-		canvas.text("Supply Stack", s/2, 0);
 		switch(supply.getType()) {
 		case CIRCUITS:
 			name = "Circuits";
@@ -126,7 +131,24 @@ public class SupplyStack extends PassiveEntity{
 			break;
 		}
 		canvas.rect(0, 0, s, s);
+		canvas.fill(0);
+		canvas.textAlign(PConstants.CENTER);
+		canvas.text("Supply Stack", s/2, 0);
 		canvas.text(name, s/2, s/2);
 		canvas.popMatrix();
+	}
+
+	/**
+	 * @return the selected
+	 */
+	public boolean isSelected() {
+		return selected;
+	}
+
+	/**
+	 * @param selected the selected to set
+	 */
+	public void setSelected(boolean selected) {
+		this.selected = selected;
 	}
 }

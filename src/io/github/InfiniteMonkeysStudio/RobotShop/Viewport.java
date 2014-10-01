@@ -67,6 +67,11 @@ public class Viewport extends PApplet {
 		return;
 	}
 	
+	public void mouseClicked() {
+		println("Click at x:" + this.mouseX + " y:" + this.mouseY);
+		println("Location is:" + getLocation(this.mouseX, this.mouseY).toString());
+	}
+	
 	public static final int getScale() {
 		return SCALE;
 	}
@@ -77,5 +82,9 @@ public class Viewport extends PApplet {
 	
 	public float getScreenY(Location loc) {
 		return loc.getY() * SCALE;
+	}
+	
+	public Location getLocation(float screenX, float screenY) {
+		return new Location((int) screenX / SCALE, (int) screenY / SCALE);
 	}
 }

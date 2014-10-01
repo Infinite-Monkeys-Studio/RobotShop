@@ -9,7 +9,7 @@ import processing.core.PConstants;
  * @author Quinn
  *
  */
-public class Worker extends MovingEntity implements Selectable{
+public class Worker extends MovingEntity{
 	
 	private static final long serialVersionUID = 1L;
 	private Inventory inventory;

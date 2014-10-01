@@ -52,5 +52,17 @@ public class Location {
 	public String toString() {
 		return x + " " + y;
 	}
+	
+	public static Location getLocation(float screenX, float screenY) {
+		return new Location((int) screenX / Viewport.SCALE, (int) screenY / Viewport.SCALE);
+	}
+	
+	public static float getScreenX(Location loc) {
+		return loc.getX() * Viewport.SCALE;
+	}
+	
+	public static float getScreenY(Location loc) {
+		return loc.getY() * Viewport.SCALE;
+	}
 }
 

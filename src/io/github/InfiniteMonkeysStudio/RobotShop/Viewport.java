@@ -71,31 +71,20 @@ public class Viewport extends PApplet {
 	
 	public void mouseClicked() {
 		println("Click at x:" + this.mouseX + " y:" + this.mouseY);
-		Location loc = getLocation(this.mouseX, this.mouseY);
-		println("Location is:" + loc.toString());
-		Entity e = shop.getCurrentBuilding().getEntityAt(loc);
-		if(e == null) {
-			e = shop.getCurrentBuilding().getSelctedEntity();
-			e.setLocation(loc);
-		} else if(e instanceof Worker) {
-			Worker worker = (Worker) e;
-			worker.select();
+		Location loc = Location.getLocation(this.mouseX, this.mouseY);
+		println("Location is:" + loc.toString()); 
+		
+		if(shop.getCurrentBuilding().getEntityAt(loc) == null) {
+			Entity e = shop.getCurrentBuilding().getSelctedEntity();
+			if(e != null) {
+				e.setLocation(loc);
+				println("moved entity");
+			}
+		} else 
+			if(shop.getCurrentBuilding().getEntityAt(loc) instanceof Worker) {
+				println("Selected Worker");
+				Worker worker = (Worker) shop.getCurrentBuilding().getEntityAt(loc);
+				worker.select();
 		}
-	}
-	
-	public static final int getScale() {
-		return SCALE;
-	}
-	
-	public float getScreenX(Location loc) {
-		return loc.getX() * SCALE;
-	}
-	
-	public float getScreenY(Location loc) {
-		return loc.getY() * SCALE;
-	}
-	
-	public Location getLocation(float screenX, float screenY) {
-		return new Location((int) screenX / SCALE, (int) screenY / SCALE);
 	}
 }

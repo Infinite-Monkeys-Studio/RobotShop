@@ -103,9 +103,9 @@ public class SupplyStack extends PassiveEntity implements Clickable{
 	@Override
 	public void draw(Viewport canvas) {
 		String name = "ERROR!";
-		float screenX = canvas.getScreenX(location);
-		float screenY = canvas.getScreenY(location);
-		final int s = Viewport.getScale();
+		float screenX = Location.getScreenX(location);
+		float screenY = Location.getScreenY(location);
+		final int s = Viewport.SCALE;
 		canvas.pushMatrix();
 		canvas.translate(screenX, screenY);
 		switch(supply.getType()) {

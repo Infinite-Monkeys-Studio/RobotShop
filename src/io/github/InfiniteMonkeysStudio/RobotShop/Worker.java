@@ -44,9 +44,9 @@ public class Worker extends MovingEntity{
 	 */
 	@Override
 	public void draw(Viewport canvas) {
-		float screenX = canvas.getScreenX(location);
-		float screenY = canvas.getScreenY(location);
-		final int s = Viewport.getScale();
+		float screenX = Location.getScreenX(location);
+		float screenY = Location.getScreenY(location);
+		final int s = Viewport.SCALE;
 		canvas.pushMatrix();
 		canvas.translate(screenX, screenY);
 		canvas.fill(100, 100, 255);

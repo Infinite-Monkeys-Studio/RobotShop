@@ -35,13 +35,11 @@ public class Shop implements Drawable{
 	 * @param canvis the Viewport to draw on
 	 */
 	public void draw(Viewport canvis) {
-		for(Building b : buildingList)
-			b.draw(canvis);
+		buildingList.get(currentBuilding).draw(canvis);
 	}
 
 	public Building getCurrentBuilding() {
-		// TODO Auto-generated method stub
-		return null;
+		return buildingList.get(currentBuilding);
 	}
 
 	/**

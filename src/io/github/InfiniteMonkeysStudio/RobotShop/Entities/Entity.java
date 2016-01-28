@@ -1,4 +1,8 @@
-package io.github.InfiniteMonkeysStudio.RobotShop;
+package io.github.InfiniteMonkeysStudio.RobotShop.Entities;
+
+import io.github.InfiniteMonkeysStudio.RobotShop.Location;
+import io.github.InfiniteMonkeysStudio.RobotShop.Interfaces.Drawable;
+import io.github.InfiniteMonkeysStudio.RobotShop.Interfaces.Selectable;
 
 import java.io.Serializable;
 
@@ -8,9 +12,12 @@ import java.io.Serializable;
  *
  */
 public abstract class Entity implements Drawable, Serializable, Selectable {
+	
 	private boolean selected;
-	private static final long serialVersionUID = 1L;
 	protected Location location;
+	// this is only for use by serializable. just to be changed when version changes.
+	private static final long serialVersionUID = 1L;
+	
 	/**
 	 * Class constructor specifying the location where the entity exists.
 	 * @param location The location of the entity

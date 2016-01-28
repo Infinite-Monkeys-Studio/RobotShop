@@ -1,4 +1,4 @@
-package io.github.InfiniteMonkeysStudio.RobotShop;
+package io.github.InfiniteMonkeysStudio.RobotShop.Interfaces;
 
 public interface Clickable {
 	

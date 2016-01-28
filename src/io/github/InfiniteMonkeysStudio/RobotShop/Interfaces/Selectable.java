@@ -1,4 +1,4 @@
-package io.github.InfiniteMonkeysStudio.RobotShop;
+package io.github.InfiniteMonkeysStudio.RobotShop.Interfaces;
 /**
  * Represents an object that can be selected
  * @author Quinn

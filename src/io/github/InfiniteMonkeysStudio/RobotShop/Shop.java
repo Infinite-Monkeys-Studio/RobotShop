@@ -1,5 +1,8 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
+import io.github.InfiniteMonkeysStudio.RobotShop.Interfaces.Drawable;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
@@ -9,10 +12,13 @@ import processing.core.PApplet;
  * @author Quinn
  *
  */
-public class Shop implements Drawable{
+public class Shop implements Drawable, Serializable {
 	
 	private ArrayList<Building> buildingList;
 	private int currentBuilding;
+	// this is only for use by serializable. just to be changed when version changes.
+	private static final long serialVersionUID = 1L;
+	
 	/**
 	 * Class constructor
 	 */

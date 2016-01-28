@@ -1,5 +1,10 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
+import io.github.InfiniteMonkeysStudio.RobotShop.Entities.Entity;
+import io.github.InfiniteMonkeysStudio.RobotShop.Enums.BuildingType;
+import io.github.InfiniteMonkeysStudio.RobotShop.Interfaces.Drawable;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
@@ -9,27 +14,21 @@ import processing.core.PApplet;
  * @author Quinn
  *
  */
-public class Building implements Drawable{
+public class Building implements Drawable, Serializable {
 	
+	private int ID;
 	private ArrayList<Entity> entityList;
 	private String name;
-	private String type;//DO write an enum
-	/**
-	 * Class constructor Type will be "default."
-	 * @param name of the building
-	 */
-	public Building(String name) {
-		this.name = name;
-		this.type = "Default";
-		entityList = new ArrayList<Entity>();
-	}
-	
+	private BuildingType type;
+	// this is only for use by serializable. just to be changed when version changes.
+	private static final long serialVersionUID = 1L;
+		
 	/**
 	 * Class constructor Setting the name and type of the building.
 	 * @param name of the building
 	 * @param type of the building
 	 */
-	public Building(String name, String type) {
+	public Building(String name, BuildingType type) {
 		this.name = name;
 		this.type = type;
 		entityList = new ArrayList<Entity>();
@@ -38,11 +37,22 @@ public class Building implements Drawable{
 	/**
 	 * Class constructor.
 	 * Name defaults to NULL
-	 * Type defaults to default
+	 * Type defaults to none
 	 */
 	public Building() {
 		this.name = null;
-		this.type = "Default";
+		this.type = BuildingType.NONE;
+		entityList = new ArrayList<Entity>();
+	}
+	
+	/**
+	 * Class constructor 
+	 * Type will be none
+	 * @param name of the building
+	 */
+	public Building(String name) {
+		this.name = name;
+		this.type = BuildingType.NONE;
 		entityList = new ArrayList<Entity>();
 	}
 	
@@ -56,6 +66,11 @@ public class Building implements Drawable{
 		return entityList.add(entity);
 	}
 
+	/**
+	 * Renders the building at the world location.
+	 * @param canvas The Canvas to draw the building in.
+	 * @return void
+	 */
 	@Override
 	public void draw(Viewport canvas) {
 		canvas.pushMatrix();
@@ -86,16 +101,44 @@ public class Building implements Drawable{
 	}
 
 	/**
-	 * Get all selected entities
-	 * @return ArrayList<Entity> all selected entities, null if no entities are selected
+	 * Get all entities
+	 * @return ArrayList<Entity> all selected entities, null if contains no entities
 	 */
-	public ArrayList<Entity> getSelctedEntity() {
+	public ArrayList<Entity> getAllEntity() {
 		ArrayList<Entity> entityList = new ArrayList<Entity>();
-		for(Entity e : entityList) {
-			if (e.isSelected()) {
-				entityList.add(e);
-			}
-		}
 		return entityList;		
+	}
+	
+	/**
+	 * Returns the building type of this building.
+	 * @return BuildingType This building's type
+	 */
+	public BuildingType getType() {
+		return this.type;
+	}
+	
+	/**
+	 * Returns this buildings name. This is not unique. only cosmetic
+	 * @return String This building's cosmetic name.
+	 */
+	public String getName() {
+		return this.name;
+	}
+	
+	/**
+	 * Sets the building's name.
+	 * @param newName The new name for the building.
+	 */
+	public void setName(String newName) {
+		this.name = newName;
+	}
+	
+	/**
+	 * Sets the building's type to match.
+	 * Be careful with this.
+	 * @param newType The new type for the building.
+	 */
+	public void setType(BuildingType newType) {
+		this.type = newType;
 	}
 }

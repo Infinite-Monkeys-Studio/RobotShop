@@ -1,5 +1,13 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
+import io.github.InfiniteMonkeysStudio.RobotShop.Entities.Entity;
+import io.github.InfiniteMonkeysStudio.RobotShop.Entities.Machine;
+import io.github.InfiniteMonkeysStudio.RobotShop.Entities.Supply;
+import io.github.InfiniteMonkeysStudio.RobotShop.Entities.SupplyStack;
+import io.github.InfiniteMonkeysStudio.RobotShop.Entities.Wall;
+import io.github.InfiniteMonkeysStudio.RobotShop.Entities.Worker;
+import io.github.InfiniteMonkeysStudio.RobotShop.Enums.SupplyType;
+
 import java.util.ArrayList;
 
 import processing.core.PApplet;
@@ -27,7 +35,7 @@ public class Viewport extends PApplet {
 		shop = new Shop();
 		this.getParent().getParent().setName("Robot Shop");
 		this.getParent().setName("Robot Shop");
-		createDummyInitialShop(); //DO Add loading and saving
+		createDummyInitialShop();
 		
 		return;
 	}
@@ -77,7 +85,7 @@ public class Viewport extends PApplet {
 		println("Location is:" + loc.toString());
 		
 		if(shop.getCurrentBuilding().getEntityAt(loc) == null) {
-			ArrayList<Entity> entityList = shop.getCurrentBuilding().getSelctedEntity();
+			ArrayList<Entity> entityList = shop.getCurrentBuilding().getAllEntity();
 			println("empty space");
 			if(entityList != null) {
 				for(Entity e : entityList)

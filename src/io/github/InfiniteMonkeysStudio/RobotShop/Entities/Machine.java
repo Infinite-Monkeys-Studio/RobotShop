@@ -1,5 +1,7 @@
-package io.github.InfiniteMonkeysStudio.RobotShop;
+package io.github.InfiniteMonkeysStudio.RobotShop.Entities;
 
+import io.github.InfiniteMonkeysStudio.RobotShop.Location;
+import io.github.InfiniteMonkeysStudio.RobotShop.Viewport;
 import processing.core.PApplet;
 import processing.core.PConstants;
 

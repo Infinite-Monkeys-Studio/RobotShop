@@ -1,4 +1,6 @@
-package io.github.InfiniteMonkeysStudio.RobotShop;
+package io.github.InfiniteMonkeysStudio.RobotShop.Entities;
+
+import io.github.InfiniteMonkeysStudio.RobotShop.Enums.SupplyType;
 
 /**
  * A single supply.

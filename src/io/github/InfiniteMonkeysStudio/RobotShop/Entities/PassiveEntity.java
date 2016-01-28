@@ -1,4 +1,7 @@
-package io.github.InfiniteMonkeysStudio.RobotShop;
+package io.github.InfiniteMonkeysStudio.RobotShop.Entities;
+
+import io.github.InfiniteMonkeysStudio.RobotShop.Location;
+
 /**
  * This represents an entity that cannot move it's self
  * @author Quinn

@@ -1,14 +1,18 @@
 package io.github.InfiniteMonkeysStudio.RobotShop;
 
+import java.io.Serializable;
+
 /**
  * Represents a location in the world.
  * @author Quinn
  *
  */
-public class Location {
+public class Location implements Serializable {
 	
 	private int x, y; //location in building
 	private Building building; //Building of location
+	// this is only for use by serializable. just to be changed when version changes.
+	private static final long serialVersionUID = 1L;
 	
 	/**
 	 * Class constructor.

@@ -36,7 +36,7 @@ public class Inventory implements Serializable, Drawable {
 
 	@Override
 	public void draw(Viewport canvas) {
-		// FIXME Auto-generated method stub
+		// FIXME Write draw function for the inventory
 		
 	}
 	

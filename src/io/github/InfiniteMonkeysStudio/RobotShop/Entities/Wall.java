@@ -12,9 +12,10 @@ import processing.core.PConstants;
 public class Wall extends PassiveEntity{
 
 	private static final long serialVersionUID = 1L;
-	private String type; //DO there is only one type of wall
+	//private String type; //DO there is only one type of wall
 	private float extent;
 	private boolean northSouth;
+	private boolean isSelected = false;
 	
 	/**
 	 * Class constructor
@@ -64,21 +65,7 @@ public class Wall extends PassiveEntity{
 	}
 
 	/**
-	 * @return type of the wall
-	 */
-	public String getType() {
-		return type;
-	}
-
-	/**
-	 * @param type to set the wall to
-	 */
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	/**
-	 * extent is the total length on the long side
+	 * Extent is the total length on the long side
 	 * @return the extent
 	 */
 	public float getExtent() {
@@ -86,7 +73,7 @@ public class Wall extends PassiveEntity{
 	}
 
 	/**
-	 * extent is the total length on the long side
+	 * Extent is the total length on the long side
 	 * @param extent to set
 	 */
 	public void setExtent(float extent) {
@@ -109,19 +96,22 @@ public class Wall extends PassiveEntity{
 
 	@Override
 	public boolean isSelected() {
-		// FIXME Auto-generated method stub
-		return false;
+		return isSelected;
 	}
 
 	@Override
 	public void select() {
-		// FIXME Auto-generated method stub
-		
+		isSelected = true;
 	}
 
 	@Override
 	public void unselect() {
-		// FIXME Auto-generated method stub
-		
+		isSelected = false;		
+	}
+
+	@Override
+	public boolean toggleSelection() {
+		isSelected = !isSelected;
+		return isSelected;
 	}
 }

@@ -2,6 +2,7 @@ package io.github.InfiniteMonkeysStudio.RobotShop.Entities;
 
 import io.github.InfiniteMonkeysStudio.RobotShop.Location;
 import io.github.InfiniteMonkeysStudio.RobotShop.Viewport;
+import io.github.InfiniteMonkeysStudio.RobotShop.Enums.SupplyType;
 import io.github.InfiniteMonkeysStudio.RobotShop.Interfaces.Clickable;
 import processing.core.PApplet;
 import processing.core.PConstants;
@@ -14,7 +15,7 @@ import processing.core.PConstants;
 public class SupplyStack extends PassiveEntity implements Clickable{
 	
 	private static final long serialVersionUID = 1L;
-	private Supply supply;
+	private SupplyType type;
 	private int quantity;
 	private boolean selected;
 	
@@ -24,9 +25,9 @@ public class SupplyStack extends PassiveEntity implements Clickable{
 	 * @param location where to place the stack
 	 * @param type of stack to create
 	 */
-	public SupplyStack(Location location, Supply type) {
+	public SupplyStack(Location location, SupplyType type) {
 		super(location);
-		this.supply = type;
+		this.type = type;
 		this.quantity = 1;
 		setSelected(false);
 	}
@@ -37,9 +38,9 @@ public class SupplyStack extends PassiveEntity implements Clickable{
 	 * @param type of stack to create
 	 * @param quantity of items in the stack
 	 */
-	public SupplyStack(Location location, Supply type, int quantity) {
+	public SupplyStack(Location location, SupplyType type, int quantity) {
 		super(location);
-		this.supply = type;
+		this.type = type;
 		this.quantity = quantity;
 		setSelected(false);
 	}
@@ -48,8 +49,8 @@ public class SupplyStack extends PassiveEntity implements Clickable{
 	 * Returns the supply type of the stack.
 	 * @return type
 	 */
-	public Supply getType() {
-		return supply;
+	public SupplyType getType() {
+		return type;
 	}
 	
 	/**
@@ -59,12 +60,11 @@ public class SupplyStack extends PassiveEntity implements Clickable{
 	 * @param newType to change the stack to
 	 * @return true if the stack is changed by the call
 	 */
-	public boolean setType(Supply newType) {
-		if(newType.equals(this.supply)) {
-			this.supply = newType;
+	public boolean setType(SupplyType newType) {
+		if(newType.equals(this.type)) {
 			return false;
 		} else {
-			this.supply = newType;
+			this.type = newType;
 			return true;
 		}
 	}
@@ -79,13 +79,13 @@ public class SupplyStack extends PassiveEntity implements Clickable{
 	
 	/**
 	 * Sets the quantity for the stack.
+	 * Be careful of using this. there is no error checking.
 	 * Returns true if the quantity changed because of the call
 	 * @param newQuantity to set for the stack
 	 * @return true if the stack is changed by the call
 	 */
 	public boolean setSize(int newQuantity) {
 		if(newQuantity == quantity) {
-			quantity = newQuantity;
 			return false;
 		} else {
 			quantity = newQuantity;
@@ -111,7 +111,7 @@ public class SupplyStack extends PassiveEntity implements Clickable{
 		final int s = Viewport.SCALE;
 		canvas.pushMatrix();
 		canvas.translate(screenX, screenY);
-		switch(supply.getType()) {
+		switch(type) {
 		case CIRCUITS:
 			name = "Circuits";
 			canvas.fill(0,128,0);
@@ -155,15 +155,45 @@ public class SupplyStack extends PassiveEntity implements Clickable{
 		this.selected = selected;
 	}
 
+	/**
+	 * Try to add a supply to the stack
+	 * @param supply the supply to add
+	 * @return True if it added it, otherwise false.
+	 */
+	public boolean add(Supply supply) {
+		return add(supply, 1);
+	}
+	
+	/**
+	 * Try to add a number of supplies to the stack
+	 * @param supply the supply to add
+	 * @param quantity the number of supplies to add
+	 * @return True if it added them, otherwise false.
+	 */
+	public boolean add(Supply supply, int quantity) {
+		// Check it is the same SupplyType.
+		if(supply.getType() == this.type) {
+			// Can it fit in the stack?
+			if(this.quantity + quantity <= this.type.maxStackSize()) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	@Override
 	public void select() {
-		// FIXME Auto-generated method stub
-		
+		this.selected = true;
 	}
 
 	@Override
 	public void unselect() {
-		// FIXME Auto-generated method stub
-		
+		this.selected = false;
+	}
+
+	@Override
+	public boolean toggleSelection() {
+		this.selected = !this.selected;
+		return this.selected;
 	}
 }

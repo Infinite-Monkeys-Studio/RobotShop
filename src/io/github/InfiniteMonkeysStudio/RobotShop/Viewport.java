@@ -46,10 +46,10 @@ public class Viewport extends PApplet {
 		Machine m1 = new Machine(new Location(10, 10), "Example");
 		Wall wall = new Wall(new Location(3,2));
 		
-		SupplyStack ss1 = new SupplyStack(new Location(2, 1), new Supply(SupplyType.CIRCUITS));
-		SupplyStack ss2 = new SupplyStack(new Location(3, 1), new Supply(SupplyType.SHEETMETAL));
-		SupplyStack ss3 = new SupplyStack(new Location(4, 1), new Supply(SupplyType.SCRAP));
-		SupplyStack ss4 = new SupplyStack(new Location(5, 1), new Supply(SupplyType.REFINEDPLASTICS));
+		SupplyStack ss1 = new SupplyStack(new Location(2, 1), SupplyType.CIRCUITS);
+		SupplyStack ss2 = new SupplyStack(new Location(3, 1), SupplyType.SHEETMETAL);
+		SupplyStack ss3 = new SupplyStack(new Location(4, 1), SupplyType.SCRAP);
+		SupplyStack ss4 = new SupplyStack(new Location(5, 1), SupplyType.REFINEDPLASTICS);
 		
 		shop.addBuilding(b1);
 		shop.getBuildingNumber(b1);

@@ -3,6 +3,8 @@ package io.github.InfiniteMonkeysStudio.RobotShop.Entities;
 import io.github.InfiniteMonkeysStudio.RobotShop.Inventory;
 import io.github.InfiniteMonkeysStudio.RobotShop.Location;
 import io.github.InfiniteMonkeysStudio.RobotShop.Viewport;
+import io.github.InfiniteMonkeysStudio.RobotShop.Interfaces.Drawable;
+import io.github.InfiniteMonkeysStudio.RobotShop.Interfaces.Selectable;
 import processing.core.PApplet;
 import processing.core.PConstants;
 
@@ -12,12 +14,13 @@ import processing.core.PConstants;
  * @author Quinn
  *
  */
-public class Worker extends MovingEntity{
+public class Worker extends MovingEntity implements Drawable, Selectable {
 	
 	private static final long serialVersionUID = 1L;
 	private Inventory inventory;
 	private String name;
-	private boolean selected;
+	private boolean isSelected;
+	
 	/**
 	 * Class construtor.
 	 * @param location of the worker
@@ -87,6 +90,12 @@ public class Worker extends MovingEntity{
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public boolean toggleSelection() {
+		isSelected = !isSelected;
+		return isSelected;
 	}
 	
 	

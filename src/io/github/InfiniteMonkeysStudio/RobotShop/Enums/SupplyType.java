@@ -6,10 +6,20 @@ package io.github.InfiniteMonkeysStudio.RobotShop.Enums;
  *
  */
 public enum SupplyType {
-	SCRAP,
-	SHEETMETAL,
-	REFINEDPLASTICS,
-	CIRCUITS;
+	SCRAP			(10),
+	SHEETMETAL		(10),
+	REFINEDPLASTICS	(10),
+	CIRCUITS		(10);
 	
-	//TODO add methods
+	private final int maxStackSize;
+	
+	SupplyType(int stackSize) {
+		this.maxStackSize = stackSize;
+	}
+	
+	public int maxStackSize() {
+		return this.maxStackSize;
+	}
+	
+	//ADD methods
 }

@@ -14,6 +14,7 @@ public class Machine extends PassiveEntity{
 
 	private static final long serialVersionUID = 1L;
 	private String type; //DO Make MachineEnum
+	private boolean isSelected = false;
 	
 	/**
 	 * Class constructor.
@@ -64,20 +65,23 @@ public class Machine extends PassiveEntity{
 
 	@Override
 	public boolean isSelected() {
-		// FIXME Auto-generated method stub
-		return false;
+		return isSelected;
 	}
 
 	@Override
 	public void select() {
-		// FIXME Auto-generated method stub
-		
+		isSelected = true;		
 	}
 
 	@Override
 	public void unselect() {
-		// FIXME Auto-generated method stub
-		
+		isSelected = false;		
+	}
+
+	@Override
+	public boolean toggleSelection() {
+		isSelected = !isSelected;
+		return isSelected;
 	}
 
 }

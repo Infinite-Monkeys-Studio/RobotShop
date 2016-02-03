@@ -18,24 +18,11 @@ public class Wall extends PassiveEntity{
 	private boolean isSelected = false;
 	
 	/**
-	 * Class constructor
-	 * @param location where to place the wall
-	 * @param type of wall to create
-	 */
-	public Wall(Location location, String type) {
-		super(location);
-		this.setType(type);
-		northSouth = true;
-		extent = 3;
-	}
-	
-	/**
 	 * Class constructor. Type will default to default.
 	 * @param location where to place the wall
 	 */
 	public Wall(Location location) {
 		super(location);
-		this.setType("default");
 		northSouth = true;
 		extent = 3;
 	}

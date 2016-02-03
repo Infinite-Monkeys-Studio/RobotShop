@@ -112,26 +112,26 @@ public class SupplyStack extends PassiveEntity implements Clickable{
 		canvas.pushMatrix();
 		canvas.translate(screenX, screenY);
 		switch(type) {
-		case CIRCUITS:
-			name = "Circuits";
-			canvas.fill(0,128,0);
-			break;
-		case REFINEDPLASTICS:
-			name = "Refined Plastics";
-			canvas.fill(255,235,205);
-			break;
-		case SCRAP:
-			name = "Scrap";
-			canvas.fill(74,74,74);
-			break;
-		case SHEETMETAL:
-			name = "Sheet Metal";
-			canvas.fill(0,46,61);
-			break;
-		default:
-			name = "ERROR!";
-			canvas.fill(255,0,0);
-			break;
+			case CIRCUITS:
+				name = "Circuits";
+				canvas.fill(0,128,0);
+				break;
+			case REFINEDPLASTICS:
+				name = "Refined Plastics";
+				canvas.fill(255,235,205);
+				break;
+			case SCRAP:
+				name = "Scrap";
+				canvas.fill(74,74,74);
+				break;
+			case SHEETMETAL:
+				name = "Sheet Metal";
+				canvas.fill(0,46,61);
+				break;
+			default:
+				name = "ERROR!";
+				canvas.fill(255,0,0);
+				break;
 		}
 		canvas.rect(0, 0, s, s);
 		canvas.fill(0);

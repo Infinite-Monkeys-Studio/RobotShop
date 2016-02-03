@@ -2,22 +2,26 @@ package io.github.InfiniteMonkeysStudio.RobotShop;
 
 import io.github.InfiniteMonkeysStudio.RobotShop.Entities.Entity;
 import io.github.InfiniteMonkeysStudio.RobotShop.Entities.Machine;
-import io.github.InfiniteMonkeysStudio.RobotShop.Entities.Supply;
 import io.github.InfiniteMonkeysStudio.RobotShop.Entities.SupplyStack;
 import io.github.InfiniteMonkeysStudio.RobotShop.Entities.Wall;
 import io.github.InfiniteMonkeysStudio.RobotShop.Entities.Worker;
 import io.github.InfiniteMonkeysStudio.RobotShop.Enums.SupplyType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
+import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
+import processing.core.PGraphics;
+import processing.core.PImage;
+import processing.core.PSurface;
 
 /**
  * The main view window. Also represents the players view in the world.
  * @author Quinn
  *
  */
-public class Viewport extends PApplet {
+public class Viewport extends PApplet implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Location location; //FIXME Remove this.
@@ -25,19 +29,25 @@ public class Viewport extends PApplet {
 	
 	private Shop shop;
 	
+	public static void main(String[] args) {
+        String[] a = {"MAIN"};
+        PApplet.runSketch( a, new Viewport());
+    }
+	
+	public void settings() {
+		size(800, 600);
+	}
+	
 	/**
 	 * Called once at the start of the PApplet.
 	 */
 	public void setup() {
-		size(800, 500);
+		this.getSurface().setTitle("Robot Shop");
+		this.getSurface().setIcon(loadImage("titleBarIcon.png"));
 		
-		// create the shop
+		// Create the shop
 		shop = new Shop();
-		this.getParent().getParent().setName("Robot Shop");
-		this.getParent().setName("Robot Shop");
 		createDummyInitialShop();
-		
-		return;
 	}
 
 	private void createDummyInitialShop() {
@@ -46,10 +56,10 @@ public class Viewport extends PApplet {
 		Machine m1 = new Machine(new Location(10, 10), "Example");
 		Wall wall = new Wall(new Location(3,2));
 		
-		SupplyStack ss1 = new SupplyStack(new Location(2, 1), SupplyType.CIRCUITS);
-		SupplyStack ss2 = new SupplyStack(new Location(3, 1), SupplyType.SHEETMETAL);
-		SupplyStack ss3 = new SupplyStack(new Location(4, 1), SupplyType.SCRAP);
-		SupplyStack ss4 = new SupplyStack(new Location(5, 1), SupplyType.REFINEDPLASTICS);
+		SupplyStack ss1 = new SupplyStack(new Location(2, 5), SupplyType.CIRCUITS);
+		SupplyStack ss2 = new SupplyStack(new Location(3, 5), SupplyType.SHEETMETAL);
+		SupplyStack ss3 = new SupplyStack(new Location(4, 5), SupplyType.SCRAP);
+		SupplyStack ss4 = new SupplyStack(new Location(5, 5), SupplyType.REFINEDPLASTICS);
 		
 		shop.addBuilding(b1);
 		shop.getBuildingNumber(b1);
@@ -85,20 +95,22 @@ public class Viewport extends PApplet {
 		println("Location is:" + loc.toString());
 		
 		if(shop.getCurrentBuilding().getEntityAt(loc) == null) {
-			ArrayList<Entity> entityList = shop.getCurrentBuilding().getAllEntity();
+			ArrayList<Entity> entityList = shop.getCurrentBuilding().getAllEntities();
 			println("empty space");
 			if(entityList != null) {
-				for(Entity e : entityList)
-					e.setLocation(loc);
-				println("moved " + entityList.size() + " entity");
+				int i =0;
+				for(Entity e : entityList) {
+					if(e.isSelected()) {
+						e.setLocation(loc);
+						i++;
+					}
+				}
+				println("moved " + i + " entity");
 			}
 		} else {
 			Entity e = shop.getCurrentBuilding().getEntityAt(loc);
 			println("Selected Entity");
-			if(e.isSelected())
-				e.unselect();
-			else
-				e.select();
+			e.toggleSelection();
 		}
 	}
 }

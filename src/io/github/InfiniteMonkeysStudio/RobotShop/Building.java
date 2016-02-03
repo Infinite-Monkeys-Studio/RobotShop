@@ -75,11 +75,11 @@ public class Building implements Drawable, Serializable {
 	public void draw(Viewport canvas) {
 		canvas.pushMatrix();
 		for(int x = 0; x < canvas.width; x += Viewport.SCALE) {
-			canvas.line(x, 0, x, canvas.getHeight());
+			canvas.line(x, 0, x, canvas.height);
 		}
 		
 		for(int y = 0; y < canvas.height; y += Viewport.SCALE) {
-			canvas.line(0, y, canvas.getWidth(), y);
+			canvas.line(0, y, canvas.width, y);
 		}
 		canvas.popMatrix();
 		for(Entity e : entityList)
@@ -104,9 +104,9 @@ public class Building implements Drawable, Serializable {
 	 * Get all entities
 	 * @return ArrayList<Entity> all selected entities, null if contains no entities
 	 */
-	public ArrayList<Entity> getAllEntity() {
-		ArrayList<Entity> entityList = new ArrayList<Entity>();
-		return entityList;		
+	public ArrayList<Entity> getAllEntities() {
+		ArrayList<Entity> eList = (ArrayList<Entity>) this.entityList.clone();
+		return eList;		
 	}
 	
 	/**

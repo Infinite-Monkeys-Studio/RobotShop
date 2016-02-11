@@ -39,6 +39,12 @@ public class Machine extends PassiveEntity{
 		canvas.pushMatrix();
 		canvas.translate(screenX, screenY);
 		
+		if(this.isSelected()) {
+			canvas.stroke(255, 0, 0);
+		} else {
+			canvas.stroke(0, 0, 0);
+		}
+		
 		canvas.fill(150);
 		canvas.rect(0, 0, s, s);
 		

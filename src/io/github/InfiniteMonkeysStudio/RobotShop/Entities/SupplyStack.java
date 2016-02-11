@@ -111,6 +111,13 @@ public class SupplyStack extends PassiveEntity implements Clickable{
 		final int s = Viewport.SCALE;
 		canvas.pushMatrix();
 		canvas.translate(screenX, screenY);
+		
+		if(this.isSelected()) {
+			canvas.stroke(255, 0, 0);
+		} else {
+			canvas.stroke(0, 0, 0);
+		}
+		
 		switch(type) {
 			case CIRCUITS:
 				name = "Circuits";

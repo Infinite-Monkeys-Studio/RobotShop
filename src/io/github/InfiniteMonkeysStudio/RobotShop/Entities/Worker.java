@@ -55,6 +55,11 @@ public class Worker extends MovingEntity implements Drawable, Selectable {
 		final int s = Viewport.SCALE;
 		canvas.pushMatrix();
 		canvas.translate(screenX, screenY);
+		if(this.isSelected()) {
+			canvas.stroke(255, 0, 0);
+		} else {
+			canvas.stroke(0, 0, 0);
+		}
 		canvas.fill(100, 100, 255);
 		canvas.ellipse(s/2, s/2, s, s);
 		canvas.textAlign(PConstants.CENTER);
@@ -92,6 +97,21 @@ public class Worker extends MovingEntity implements Drawable, Selectable {
 		this.name = name;
 	}
 
+	@Override
+	public boolean isSelected() {
+		return isSelected;
+	}
+
+	@Override
+	public void select() {
+		isSelected = true;
+	}
+
+	@Override
+	public void unselect() {
+		isSelected = false;		
+	}
+	
 	@Override
 	public boolean toggleSelection() {
 		isSelected = !isSelected;

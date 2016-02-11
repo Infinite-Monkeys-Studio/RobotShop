@@ -24,10 +24,11 @@ import processing.core.PSurface;
 public class Viewport extends PApplet implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Location location; //FIXME Remove this.
 	public static final int SCALE = 45;
 	
 	private Shop shop;
+	
+	private ArrayList<Character> pressedKeys = new ArrayList<Character>();
 	
 	public static void main(String[] args) {
         String[] a = {"MAIN"};
@@ -84,7 +85,9 @@ public class Viewport extends PApplet implements Serializable {
 	 * Called once per frame by the PApplet.
 	 */
 	public void draw() {
+		resetMatrix();
 		background(159,182,205);
+		
 		shop.draw(this);
 		return;
 	}
@@ -94,7 +97,8 @@ public class Viewport extends PApplet implements Serializable {
 		Location loc = Location.getLocation(this.mouseX, this.mouseY);
 		println("Location is:" + loc.toString());
 		
-		if(shop.getCurrentBuilding().getEntityAt(loc) == null) {
+		Entity entity = shop.getCurrentBuilding().getEntityAt(loc);
+		if(entity == null) {
 			ArrayList<Entity> entityList = shop.getCurrentBuilding().getAllEntities();
 			println("empty space");
 			if(entityList != null) {
@@ -108,9 +112,20 @@ public class Viewport extends PApplet implements Serializable {
 				println("moved " + i + " entity");
 			}
 		} else {
-			Entity e = shop.getCurrentBuilding().getEntityAt(loc);
 			println("Selected Entity");
-			e.toggleSelection();
+			entity.toggleSelection();
+		}
+	}
+	
+	public void keyPressed() {
+		if(!pressedKeys.contains(key)) {
+			pressedKeys.add(key);
+		}
+	}
+	
+	public void keyReleased() {
+		if(pressedKeys.contains(key)) {
+			pressedKeys.remove(pressedKeys.indexOf(key));
 		}
 	}
 }

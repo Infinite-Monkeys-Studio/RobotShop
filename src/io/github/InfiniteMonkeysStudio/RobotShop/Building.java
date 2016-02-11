@@ -74,6 +74,8 @@ public class Building implements Drawable, Serializable {
 	@Override
 	public void draw(Viewport canvas) {
 		canvas.pushMatrix();
+		canvas.stroke(0, 0, 0);
+		
 		for(int x = 0; x < canvas.width; x += Viewport.SCALE) {
 			canvas.line(x, 0, x, canvas.height);
 		}

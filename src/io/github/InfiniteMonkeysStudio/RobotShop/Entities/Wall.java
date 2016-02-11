@@ -9,7 +9,7 @@ import processing.core.PConstants;
  * @author Quinn
  *
  */
-public class Wall extends PassiveEntity{
+public class Wall extends PassiveEntity {
 
 	private static final long serialVersionUID = 1L;
 	//private String type; //DO there is only one type of wall
@@ -39,6 +39,7 @@ public class Wall extends PassiveEntity{
 		
 		canvas.pushMatrix();
 		canvas.translate(screenX, screenY);
+		canvas.stroke(0);
 		canvas.fill(0);
 		if(northSouth) {
 			canvas.rect(0, 0, s, extent * s);
